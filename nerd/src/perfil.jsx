@@ -1,5 +1,5 @@
 import React from "react";
-import './perfil.css';
+import './perfil.module.css';
 
 export default function Perfil() {
   return (
