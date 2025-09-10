@@ -13,6 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/perfil" element={<Perfil />} />
+        <Route path="/paginaEventos" element={<Eventos/>}/>
       </Routes>
     </Router>
   </React.StrictMode>
