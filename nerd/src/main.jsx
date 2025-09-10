@@ -6,6 +6,7 @@ import Perfil from "./perfil";
 import Navbar from "./navbar";
 import Eventos from "./paginaEventos";
 import "./index.css";
+import Login from "./login";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -14,8 +15,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/perfil" element={<Perfil />} />
-        <Route path="/paginaEventos" element={<Eventos/>}/>
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/paginaEventos" element={<Eventos />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   </React.StrictMode>
