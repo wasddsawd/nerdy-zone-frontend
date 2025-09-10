@@ -4,6 +4,7 @@ import "./login.css";
 
 export default function Login() {
   return (
+    <>
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
       <header className="w-full max-w-4xl bg-white shadow-md rounded-xl p-4 flex items-center justify-between">
         <h1 className="text-2xl font-bold text-gray-800">Meu Perfil</h1>
@@ -42,5 +43,6 @@ export default function Login() {
         </div>
       </section>
     </div>
+    </>
   );
 }

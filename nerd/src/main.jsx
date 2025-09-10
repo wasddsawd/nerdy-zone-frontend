@@ -5,6 +5,7 @@ import App from "./App";
 import Perfil from "./perfil";
 import Navbar from "./navbar";
 import Eventos from "./paginaEventos";
+import Login from "./login";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
