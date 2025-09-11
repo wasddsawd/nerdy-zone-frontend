@@ -6,7 +6,7 @@ import Perfil from "./perfil";
 import Navbar from "./navbar";
 import Eventos from "./paginaEventos";
 import Login from "./login";
-import "./styles/App.css";
+import "./styles/Geral.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
