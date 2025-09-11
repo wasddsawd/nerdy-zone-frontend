@@ -1,11 +1,12 @@
 import React from "react";
+import './styles/App.css';
 
 export default function App() {
   return (
     <>
       {/* Cabeçalho */}
       <header>
-        <div className="logo">
+        <div className='logo'>
           <img src="public/nerdy.png" alt="Logo NerdyZone" />
           <span>NerdyZone</span>
         </div>
