@@ -1,5 +1,7 @@
 
-
+.p {
+  color: black;
+}
 
 .container_principal {
   display: flex;
@@ -10,14 +12,26 @@
 
 .container_sub {
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 70vh;
+  width: 50%;
+  gap: 1rem;
+  background-color: #ffffff;
+  border-radius: 34px;
+  z-index: 1;
+}
+
+.pergunta {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 70vh;
-  width: 40%;
+  width: 50%;
   gap: 1rem;
-  background-color: #ffffff;
   border-radius: 30px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .container {
@@ -26,7 +40,7 @@
   justify-content: center;
   align-items: center;
   height: 70vh;
-  width: 65%;
+  width: 50%;
   gap: 1rem;
   background-color: #003569;
   border-radius: 30px;
@@ -52,6 +66,19 @@
   margin-bottom: 10px;
   border: 1px solid #aaa;
   border-radius: 8px;
+}
+
+.a {
+  width: 250px;
+  padding: 10px;
+  background: #00ff73;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-align: center;
 }
 
 .button {
