@@ -2,14 +2,16 @@ import React from "react";
 import styles from "./styles/Home.module.css";
 import "./styles/Geral.css";
 import nerdy from "./assets/nerdy.png";
+import Navbar from "./components/ui/navbar";
 export default function App() {
   return (
     <>
       <div className={styles.all}>
         {/* Cabeçalho */}
         <header>
+          <Navbar />
           <div className={styles.logo}>
-            <img src={nerdy}/>
+            <img src={nerdy} />
           </div>
           <nav>
             <ul>
