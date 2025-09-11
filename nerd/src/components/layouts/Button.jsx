@@ -1,9 +1,9 @@
 import React, { Children } from "react";
-import "../../styles/login.module.css"
+import styles from "../../styles/login.module.css";
 
 export function Button_pra_login({children, onClick}) {
   return(
-    <button onClick={onClick} className="btn">
+    <button onClick={onClick} className={styles.button}>
       {children}
     </button>
   )
