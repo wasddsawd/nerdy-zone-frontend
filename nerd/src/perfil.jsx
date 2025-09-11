@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '../perfil.module.css';
+import styles from './styles/perfil.module.css';
 
 export default function Perfil() {
   return (
@@ -36,7 +36,7 @@ export default function Perfil() {
       <section className={styles.perfil_extra}>
         <div className={styles.extra_item}>
           <h3 className={styles.subtitulo}>Eventos participados</h3>
-          <p>Lista dos eventos participaos</p>
+          <p>Lista dos eventos participados</p>
         </div>
       </section>
     </div>
