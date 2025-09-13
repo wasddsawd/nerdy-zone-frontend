@@ -15,7 +15,7 @@ function AnimatedRoutes() {
 
   return (
     <div className="routes-wrapper">
-      <AnimatePresence mode="sync">
+      <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/login" element={<Login key="login" />} />
           <Route path="/cadastro" element={<Cadastro key="cadastro" />} />

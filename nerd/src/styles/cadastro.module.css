@@ -47,7 +47,7 @@
   height: 70vh;
   width: 50%;
   gap: 1rem;
-  background-color: #003569;
+  background-color: #ff9100;
   border-radius: 30px;
   z-index: 2;
 }
@@ -69,14 +69,18 @@
   width: 250px;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #aaa;
+  border: 1px solid #000000;
   border-radius: 8px;
+}
+
+.input::placeholder {
+  color: #000000;
 }
 
 .a {
   width: 250px;
   padding: 10px;
-  background: #ff9100;
+  background: #003569;
   color: white;
   font-weight: bold;
   border: none;

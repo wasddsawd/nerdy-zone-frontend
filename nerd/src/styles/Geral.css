@@ -137,3 +137,8 @@ footer {
     @apply bg-background text-foreground;
   }
 }
+
+
+.routes-wrapper {
+  z-index: 1;
+}
