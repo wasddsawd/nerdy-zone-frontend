@@ -5,6 +5,7 @@ import Home from "./Home";
 import Perfil from "./perfil";
 import Eventos from "./paginaEventos";
 import Login from "./pages/login";
+import Cadastro from "./pages/cadastro";
 import "./styles/Geral.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/paginaEventos" element={<Eventos />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
       </Routes>
     </Router>
   </React.StrictMode>

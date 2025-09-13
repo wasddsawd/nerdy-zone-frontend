@@ -3,6 +3,7 @@ import {Button_pra_login} from "../components/layouts/Button_login";
 import { Button } from "../components/ui/Button";
 import {Input_pra_login} from "../components/layouts/Input";
 import styles from "../styles/login.module.css";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [Email, setEmail] = useState("");
@@ -38,7 +39,7 @@ export default function Login() {
       </div>
       <div className={styles.pergunta}>
         <p className={styles.p}>Não possui uma conta?</p>
-        <a className={styles.a} href="/cadastro">Cadastre-se</a>
+        <Link className={styles.a} to="/cadastro">Cadastre-se</Link>
       </div>
       </div>
     </div>
