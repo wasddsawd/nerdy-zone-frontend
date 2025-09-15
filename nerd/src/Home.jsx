@@ -13,30 +13,6 @@ export default function App() {
           <div className={styles.logo}>
             <img src={nerdy} />
           </div>
-          <nav>
-            <ul>
-              <li>
-                <a href="#" className={styles.words}>
-                  Início
-                </a>
-              </li>
-              <li>
-                <a href="#" className={styles.words}>
-                  Sobre
-                </a>
-              </li>
-              <li>
-                <a href="#" className={styles.words}>
-                  Serviços
-                </a>
-              </li>
-              <li>
-                <a href="#" className={styles.words}>
-                  Contato
-                </a>
-              </li>
-            </ul>
-          </nav>
         </header>
 
         {/* Banner */}
