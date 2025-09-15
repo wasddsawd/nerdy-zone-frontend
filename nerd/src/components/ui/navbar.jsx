@@ -8,16 +8,16 @@ export default function Navbar() {
         <Link to="/">
           Home
         </Link>
+        <Link to="/perfil">
+          perfil
+        </Link>
+        <Link to="/paginaEventos">
+          PaginaEventos
+        </Link>
         <Link to="/login">
           Login
         </Link>
-        <Link to="/paginaEventos">
-           PaginaEventos
-        </Link>
-        <Link to="/login">
-        Login</Link>
       </div>
     </nav>
   );
 }
- 
