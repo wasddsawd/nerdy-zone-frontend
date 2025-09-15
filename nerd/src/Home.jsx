@@ -3,6 +3,16 @@ import styles from "./styles/Home.module.css";
 import "./styles/Geral.css";
 import nerdy from "./assets/nerdy.png";
 import Navbar from "./components/ui/navbar";
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarTrigger,
+} from "./components/ui/menubar"
+
 export default function App() {
   return (
     <>
