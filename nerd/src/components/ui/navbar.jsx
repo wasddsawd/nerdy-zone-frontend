@@ -1,21 +1,7 @@
 import * as React from "react";
-import { Menubar } from "radix-ui";
-import {
-  CheckIcon,
-  ChevronRightIcon,
-  DotFilledIcon,
-} from "../../../node_modules/@radix-ui/react-icons";
 import "../../styles/Geral.css";
-
-const RADIO_ITEMS = ["Andy", "Benoît", "Luis"];
-const CHECK_ITEMS = ["Always Show Bookmarks Bar", "Always Show Full URLs"];
-
-const MenubarDemo = () => {
-  const [checkedSelection, setCheckedSelection] = React.useState([
-    CHECK_ITEMS[1],
-  ]);
-  const [radioSelection, setRadioSelection] = React.useState(RADIO_ITEMS[2]);
-
+import { Link } from "react-router-dom";
+export default function Navbar() {
   return (
     <nav>
       <div >
@@ -30,6 +16,5 @@ const MenubarDemo = () => {
       </div>
     </nav>
   );
-};
-
-export default MenubarDemo;
+}
+ 
