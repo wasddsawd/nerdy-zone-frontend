@@ -14,6 +14,8 @@ export default function Navbar() {
         <Link to="/paginaEventos">
            PaginaEventos
         </Link>
+        <Link to="/login">
+        Login</Link>
       </div>
     </nav>
   );

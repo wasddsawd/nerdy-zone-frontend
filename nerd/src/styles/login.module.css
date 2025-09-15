@@ -1,56 +1,104 @@
-.body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: linear-gradient(135deg, #8B00FF, #FF0000); /* roxo + vermelho */
-    }
- 
-    .container {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      width: 300px;
-      text-align: center;
-    }
- 
-    .input {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 2px solid #8B00FF;
-      border-radius: 8px;
-      outline: none;
-      font-size: 1rem;
-    }
- 
-    .input:focus {
-      border-color: #FF0000;
-    }
- 
-    .button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 8px;
-      background: #FF0000;
-      color: #fff;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s;
-    }
- 
-    .button:hover {
-      background: #8B00FF;
-    }
- 
-    .toggle {
-      margin-top: 15px;
-      font-size: 0.9rem;
-      color: #333;
-      cursor: pointer;
-    }
+
+.p {
+  color: black;
+}
+
+.container_principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container_sub {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 70vh;
+  width: 50%;
+  gap: 1rem;
+  background-color: #ffffff;
+  border-radius: 34px;
+  z-index: 1;
+}
+
+.pergunta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 50%;
+  gap: 1rem;
+  border-radius: 30px;
+  z-index: 2;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 50%;
+  gap: 1rem;
+  background-color: #003569;
+  border-radius: 30px;
+  z-index: 2;
+}
+
+.container_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.input {
+  width: 250px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+}
+
+.a {
+  width: 250px;
+  padding: 10px;
+  background: #00ff73;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-align: center;
+}
+
+.button {
+  width: 250px;
+  padding: 10px;
+  background: #0070f3;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.button:hover {
+  background: #005bb5;
+}
+
