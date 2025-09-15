@@ -1,3 +1,13 @@
-.dentro{
-    width: min-content;
+.fora {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: solid 2px white;
+}
+.dentro {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2rem;
+    width: 100%;
 }
