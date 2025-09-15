@@ -18,7 +18,7 @@ export default function Login() {
     <div className={styles.container_principal}>
       <div className={styles.container_sub}>
       <div className={styles.container}>
-        <h1 className={styles.title}>Login</h1>
+        <h1 className={styles.title}>Cadastrar</h1>
         <form className={styles.container_form} onSubmit={handleSubmit}>
           <Input_pra_login
           id_name="email"
@@ -34,12 +34,12 @@ export default function Login() {
             value={Senha}
             onChange={(e) => setSenha(e.target.value)}
           />
-          <Button_pra_login type="submit">Entrar</Button_pra_login>
+          <Button_pra_login type="submit">Cadastrar</Button_pra_login>
         </form>
       </div>
       <div className={styles.pergunta}>
-        <p className={styles.p}>Não possui uma conta?</p>
-        <Link className={styles.a} to="/cadastro">Cadastre-se</Link>
+        <p className={styles.p}>Possuí possui uma conta?</p>
+        <Link className={styles.a} to="/login">Entrar</Link>
       </div>
       </div>
     </div>
