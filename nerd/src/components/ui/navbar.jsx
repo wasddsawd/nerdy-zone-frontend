@@ -1,45 +1,42 @@
 import * as React from "react";
+import { useState } from 'react'
 import "../../styles/Geral.css";
 import styles from "../../styles/navbar.module.css";
-import { Link } from "react-router-dom";
-export default function Navbar(selecao) {
-  const [page, setPage] = useState(selecao.page);
+import { Link, useLocation } from "react-router-dom";
+export default function Navbar(className) {
+  const location = useLocation();
   return (
     <nav className={styles.fora}>
       <div className={styles.dentro}>
         <Link
           to="/"
           id={styles.home}
-          className={styles.navs}
-          style={page === "home" ? { display: "block" } : {}}
+          className={location.pathname === "/" ? styles.navativa : {}}
           onClick={() => setPage("home")}
         >
           Home
         </Link>
         <Link
           to="/perfil"
-          id={styles.perfil}
-          className={styles.navs}
-          style={page === "perfil" ? { display: "block" } : {}}
-          onClick={() => setPage("perfil")}
+          id={styles.home}
+          className={`${location.pathname === "/perfil" ? styles.navativa : {}} ${location.pathname === "/login" || location.pathname === "" ? styles.navs : {}}`}
+          onClick={() => setPage("home")}
         >
           Perfil
         </Link>
         <Link
           to="/login"
-          id={styles.login}
-          className={styles.navs}
-          style={page === "login" ? { display: "block" } : {}}
-          onClick={() => setPage("login")}
+          id={styles.home}
+          className={`${location.pathname === "/perfil" ? styles.navativa : {}} ${location.pathname === "/login" || location.pathname === "" ? styles.navs : {}}`}
+          onClick={() => setPage("home")}
         >
           Login
         </Link>
         <Link
-          to="/paginaEventos"
-          id={styles.eventos}
-          className={styles.navs}
-          style={page === "eventos" ? { display: "block" } : {}}
-          onClick={() => setPage("eventos")}
+          to="/"
+          id={styles.home}
+          className={location.pathname === "/" ? styles.navativa : {}}
+          onClick={() => setPage("home")}
         >
           Eventos
         </Link>
