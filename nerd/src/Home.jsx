@@ -7,9 +7,6 @@ import Navbar from "./components/ui/navbar";
 export default function App() {
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
       <div className={styles.all}>
         {/* Cabeçalho */}
 
