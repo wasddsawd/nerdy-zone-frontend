@@ -3,18 +3,18 @@ import styles from "./styles/Home.module.css";
 import "./styles/Geral.css";
 import nerdy from "./assets/nerdy.png";
 import Navbar from "./components/ui/navbar";
+
 export default function App() {
   return (
     <>
       <div className={styles.all}>
         {/* Cabeçalho */}
-        <header>
-          <Navbar />
+
+        <div>
           <div className={styles.logo}>
             <img src={nerdy} />
           </div>
-        </header>
-
+        </div>
         {/* Banner */}
         <section className={styles.banner}>
           <h1>Bem-vindo à NerdyZone</h1>
