@@ -19,7 +19,7 @@ export default function Navbar(className) {
         <Link
           to="/perfil"
           id={styles.home}
-          className={`${location.pathname === "/perfil" ? styles.navativa : {}} ${location.pathname === "/login" || location.pathname === "" ? styles.navs : {}}`}
+          className={`${location.pathname === "/perfil" ? styles.navativa : {}}`}
           onClick={() => setPage("home")}
         >
           Perfil
@@ -27,15 +27,15 @@ export default function Navbar(className) {
         <Link
           to="/login"
           id={styles.home}
-          className={`${location.pathname === "/perfil" ? styles.navativa : {}} ${location.pathname === "/login" || location.pathname === "" ? styles.navs : {}}`}
+          className={`${location.pathname === "/login" ? styles.navativa : {}}`}
           onClick={() => setPage("home")}
         >
           Login
         </Link>
         <Link
-          to="/"
+          to="/paginaEventos"
           id={styles.home}
-          className={location.pathname === "/" ? styles.navativa : {}}
+          className={`${location.pathname === "/paginaEventos" ? styles.navativa : {}}`}
           onClick={() => setPage("home")}
         >
           Eventos
