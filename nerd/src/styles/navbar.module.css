@@ -5,6 +5,7 @@
   padding: 1rem;
   border-bottom: solid 6px white;
   background-color: #00264d;
+  z-index: 1000;
 }
 .dentro {
     display: flex;
