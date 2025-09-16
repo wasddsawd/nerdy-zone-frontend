@@ -1,0 +1,42 @@
+* {
+  overflow: hidden;
+}
+
+.container_body {
+  display: flex;
+  width: 100%;
+  height: 93vh;
+  background-color: aqua;
+  padding: 10px;
+}
+
+.container_menor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 70%;
+  height: 98%;
+}
+
+.container_menorzin {
+  width: 30%;
+  height: 98%;
+  background-color: wheat;
+  border-radius: 10px;
+}
+
+.banner {
+  width: 95%;
+  height: 45%;
+  background-color: wheat;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.eventos {
+  width: 95%;
+  height: 55%;
+  background-color: wheat;
+  border-radius: 10px;
+}
