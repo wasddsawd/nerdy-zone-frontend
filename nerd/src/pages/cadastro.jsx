@@ -14,6 +14,7 @@ export default function Cadastro() {
 
   const [Email, setEmail] = useState("");
   const [Senha, setSenha] = useState("");
+  const [Username, setUsername] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,6 +40,14 @@ export default function Cadastro() {
           className={styles.conteudo}>
         <h1 className={styles.title}>Cadastro</h1>
         <form className={styles.container_form} onSubmit={handleSubmit}>
+          <Input_pra_login
+            classe={styles.input}
+            id_name="nome"
+            type="text"
+            placeholder="Digite seu Nickname"
+            value={Username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
           <Input_pra_login
             classe={styles.input}
             id_name="email"
