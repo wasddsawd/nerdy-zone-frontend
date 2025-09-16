@@ -22,10 +22,7 @@ export default function Navbar() {
           className={`${location.pathname === "/perfil" ? styles.navativa : {}}`}
           onClick={() => setPage("home")}
         >
-          perfil
-        </Link>
-        <Link to="/paginaEventos">
-          PaginaEventos
+          Perfil
         </Link>
         <Link
           to="/login"
