@@ -8,7 +8,7 @@ import { delay, motion } from "framer-motion";
 
 export default function Login() {
   const variants = {
-  exit: { x: "-105%",backgroundColor: "#003569", transition: { duration: 0.8, delay: 0.6 } }
+  exit: {backgroundColor: "#003569", transition: { duration: 0.8, delay: 0.6 } }
 }
 
 
@@ -22,7 +22,9 @@ export default function Login() {
 
   return (
     <div className={styles.container_principal}>
-      <div className={styles.container_sub}>
+      <motion.div 
+      exit={{flexDirection: "row", transition: {duration: 1}}}
+      className={styles.container_sub}>
       <div className={styles.container}>
           <motion.div
           key={location.pathname}
@@ -66,7 +68,7 @@ export default function Login() {
         <p className={styles.p}>Possuí uma conta?</p>
         <Link className={styles.a} to="/login">Entrar</Link>
       </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 }
