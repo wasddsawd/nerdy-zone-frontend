@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./styles/Home.module.css";
-import "./styles/Geral.css";
-import nerdy from "./assets/nerdy.png";
-import Navbar from "./components/ui/navbar";
+import styles from "../styles/Home.module.css";
+import "../styles/Geral.css";
+import nerdy from "../assets/nerdy.png";
+import Navbar from "../components/ui/navbar";
 
 export default function App() {
   return (
