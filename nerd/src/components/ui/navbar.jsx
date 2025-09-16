@@ -10,32 +10,28 @@ export default function Navbar() {
       <div className={styles.dentro}>
         <Link
           to="/"
-          id={styles.home}
-          className={location.pathname === "/" ? styles.navativa : {}}
+          className={location.pathname === "/" ? styles.navativa : ""}
           onClick={() => setPage("home")}
         >
           Home
         </Link>
         <Link
           to="/perfil"
-          id={styles.home}
-          className={`${location.pathname === "/perfil" ? styles.navativa : {}}`}
+          className={`${location.pathname === "/perfil" ? styles.navativa : ""}`}
           onClick={() => setPage("home")}
         >
           Perfil
         </Link>
         <Link
           to="/login"
-          id={styles.home}
-          className={`${location.pathname === "/login" || location.pathname === "/cadastro" ? styles.navativa : {}}`}
+          className={`${location.pathname === "/login" || location.pathname === "/cadastro" ? styles.navativa : ""}`}
           onClick={() => setPage("home")}
         >
           Login
         </Link>
         <Link
           to="/paginaEventos"
-          id={styles.home}
-          className={`${location.pathname === "/paginaEventos" ? styles.navativa : {}}`}
+          className={`${location.pathname === "/paginaEventos" ? styles.navativa : ""}`}
           onClick={() => setPage("home")}
         >
           Eventos

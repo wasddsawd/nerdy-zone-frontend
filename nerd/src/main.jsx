@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/paginaEventos" element={<Eventos />} />
         {/* aqui não coloco mais login/cadastro */}
       </Routes>
-      <AnimatedRoutes />
+      <AnimatedRoutes />x
     </Router>
   </React.StrictMode>
 );
