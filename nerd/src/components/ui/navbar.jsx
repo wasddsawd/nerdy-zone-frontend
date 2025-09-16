@@ -27,7 +27,7 @@ export default function Navbar() {
         <Link
           to="/login"
           id={styles.home}
-          className={`${location.pathname === "/login" ? styles.navativa : {}}`}
+          className={`${location.pathname === "/login" || location.pathname === "/cadastro" ? styles.navativa : {}}`}
           onClick={() => setPage("home")}
         >
           Login
