@@ -1,17 +1,24 @@
+/* ========================
+   GLOBAL STYLES
+======================== */
 .all {
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-image: linear-gradient(135deg, var(--color-primary), var(--color-dark));
   color: var(--color-text);
   line-height: 1.6;
   min-height: 100vh;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
   width: 100%;
+
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
+/* ========================
+   CONTAINER
+======================== */
 .container {
   max-width: 1200px;
   width: 100%;
@@ -19,27 +26,32 @@
   padding: 0 20px;
 }
 
+/* ========================
+   LOGO
+======================== */
 .logo {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
-  filter: drop-shadow(0px 0px 20px rgb(0, 183, 255));
+  filter: drop-shadow(0 0 20px rgb(0, 183, 255));
 }
 
 .logo img {
   height: 200px;
 }
 
-/* Banner */
+/* ========================
+   BANNER
+======================== */
 .banner {
   background: var(--color-dark);
   padding: 80px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 10px;
   text-align: center;
+  border-radius: 10px;
   margin-bottom: 40px;
 }
 
@@ -51,8 +63,8 @@
 
 .banner p {
   font-size: 1.1rem;
-  margin-bottom: 25px;
   color: #ccc;
+  margin-bottom: 25px;
 }
 
 .banner button {
@@ -63,14 +75,16 @@
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s;
 }
 
 .banner button:hover {
   background: var(--color-secondary);
 }
 
-/* Cards */
+/* ========================
+   CARDS
+======================== */
 .cards_container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -81,14 +95,15 @@
 
 .card {
   background: var(--color-dark);
-  border-radius: 12px;
-  padding: 25px 20px;
+  color: var(--color-light);
   width: 100%;
   max-width: 300px;
+  padding: 25px 20px;
+  border-radius: 12px;
   text-align: left;
-  color: var(--color-light);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.6s ease forwards;
@@ -97,9 +112,11 @@
 .card:nth-child(1) {
   animation-delay: 0.2s;
 }
+
 .card:nth-child(2) {
   animation-delay: 0.4s;
 }
+
 .card:nth-child(3) {
   animation-delay: 0.6s;
 }
@@ -119,6 +136,9 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
+/* ========================
+   ANIMATIONS
+======================== */
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -126,10 +146,12 @@
   }
 }
 
-/* Footer */
+/* ========================
+   FOOTER
+======================== */
 .footer {
-  text-align: center;
   width: 100%;
+  text-align: center;
   padding: 20px;
   background: var(--color-dark);
   color: var(--color-light);
