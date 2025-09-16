@@ -2,6 +2,16 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+:root {
+  --color-primary: #004aad;     /* Azul fundo principal */
+  --color-secondary: #0073e6;   /* Azul médio */
+  --color-accent: #00bcd4;      /* Ciano vibrante */
+  --color-dark: #00264d;        /* Azul escuro */
+  --color-light: #e6f7ff;       /* Azul claro suave */
+  --color-text: #ffffff;        /* Texto branco */
+  --shadow-color: rgba(0, 0, 0, 0.25);
+}
+
 body {
   font-family: Montserrat, sans-serif;
   background-image: linear-gradient(135deg, var(--color-primary), var(--color-dark));
