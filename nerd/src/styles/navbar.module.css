@@ -1,0 +1,19 @@
+.fora {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: solid 6px white;
+  background-color: #00264d;
+  z-index: 1000;
+}
+.dentro {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.3rem;
+    width: 100%;
+}
+.navativa{
+    display: block;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00b7ff, 0 0 40px #00b7ff;
+}

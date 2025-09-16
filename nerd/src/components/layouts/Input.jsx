@@ -1,10 +1,9 @@
 import React from "react";
-import styles from "../../styles/login.module.css";
 
-export function Input_pra_login({id_name, type, placeholder, value, onChange }) {
+export function Input_pra_login({id_name, type, placeholder, value, onChange, classe }) {
   return (
     <input
-      className={styles.input}
+      className={classe}
       id={id_name}
       type={type}
       placeholder={placeholder}

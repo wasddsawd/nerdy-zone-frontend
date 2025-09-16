@@ -1,45 +1,20 @@
 import React from "react";
-import styles from "./styles/Home.module.css";
-import "./styles/Geral.css";
-import nerdy from "./assets/nerdy.png";
-import Navbar from "./components/ui/navbar"
+import styles from "../styles/Home.module.css";
+import "../styles/Geral.css";
+import nerdy from "../assets/nerdy.png";
+import Navbar from "../components/ui/navbar";
 
 export default function App() {
   return (
     <>
       <div className={styles.all}>
         {/* Cabeçalho */}
-        <header>
-          <Navbar />
+
+        <div>
           <div className={styles.logo}>
             <img src={nerdy} />
           </div>
-          <nav>
-            <ul>
-              <li>
-                <a href="#" className={styles.words}>
-                  Início
-                </a>
-              </li>
-              <li>
-                <a href="#" className={styles.words}>
-                  Sobre
-                </a>
-              </li>
-              <li>
-                <a href="#" className={styles.words}>
-                  Serviços
-                </a>
-              </li>
-              <li>
-                <a href="#" className={styles.words}>
-                  Contato
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </header>
-
+        </div>
         {/* Banner */}
         <section className={styles.banner}>
           <h1>Bem-vindo à NerdyZone</h1>
