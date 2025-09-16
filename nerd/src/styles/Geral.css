@@ -53,3 +53,29 @@ footer {
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
+
+/* Barra inteira */
+::-webkit-scrollbar {
+  width: 50px; /* largura */
+}
+
+/* Fundo da barra */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* A parte que se move */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #4696ff #00268f; /* thumb cor / track cor */
+}
+
+
+
+

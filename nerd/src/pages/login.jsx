@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 export default function Login() {
   const variants = {
-  exit: { x: 488,backgroundColor: "#e49e09", transition: { duration: 0.8, delay: 0.6 } }
+  exit: { x: "105%",backgroundColor: "#e49e09", transition: { duration: 0.8, delay: 0.6 } }
 }
 
   const [Email, setEmail] = useState("");

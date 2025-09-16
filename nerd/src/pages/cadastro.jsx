@@ -8,7 +8,7 @@ import { delay, motion } from "framer-motion";
 
 export default function Login() {
   const variants = {
-  exit: { x: -488,backgroundColor: "#003569", transition: { duration: 0.8, delay: 0.6 } }
+  exit: { x: "-105%",backgroundColor: "#003569", transition: { duration: 0.8, delay: 0.6 } }
 }
 
 

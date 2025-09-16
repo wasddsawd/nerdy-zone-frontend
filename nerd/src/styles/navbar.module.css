@@ -3,12 +3,12 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  border-bottom: solid 2px white;
+  border-bottom: solid 6px white;
 }
 .dentro {
     display: flex;
     justify-content: space-around;
-    font-size: 2rem;
+    font-size: 1.3rem;
     width: 100%;
 }
 .navs {
@@ -16,5 +16,5 @@
 }
 .navativa{
     display: block;
-    background-color: rebeccapurple;
+    color: rebeccapurple;
 }
