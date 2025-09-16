@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import {Button_pra_login} from "../components/layouts/Button_login";
+import { Button_pra_login } from "../components/layouts/Button_login";
 import { Button } from "../components/ui/Button";
-import {Input_pra_login} from "../components/layouts/Input";
+import { Input_pra_login } from "../components/layouts/Input";
 import styles from "../styles/cadastro.module.css";
 import { Link } from "react-router-dom";
 import { delay, motion } from "framer-motion";
@@ -16,15 +16,38 @@ export default function Cadastro() {
   const [Senha, setSenha] = useState("");
   const [Username, setUsername] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Email:", Email, "Senha:", Senha);
+
+    try {
+      const response = await fetch("https://nerdyzone.onrender.com/cadastro", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: Email,
+          senha: Senha,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Usuário cadastrado com sucesso!");
+        console.log(data.usuario); // user_id, email, etc.
+      } else {
+        alert(data.error || "Erro no cadastro");
+      }
+    } catch (error) {
+      console.error("Erro na requisição:", error);  
+      alert("Erro de conexão com o servidor");
+    }
   };
 
   return (
     <div className={styles.container_principal}>
       <div className={styles.container_sub}>
-      <div className={styles.container}>
+        <div className={styles.container}>
           <motion.div
           layoutId="quadrado"
           transition={{duration: 1}}

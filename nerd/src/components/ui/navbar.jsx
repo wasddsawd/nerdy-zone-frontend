@@ -3,7 +3,7 @@ import { useState } from 'react'
 import "../../styles/Geral.css";
 import styles from "../../styles/navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
-export default function Navbar(className) {
+export default function Navbar() {
   const location = useLocation();
   return (
     <nav className={styles.fora}>
@@ -27,7 +27,7 @@ export default function Navbar(className) {
         <Link
           to="/login"
           id={styles.home}
-          className={`${location.pathname === "/login" ? styles.navativa : {}}`}
+          className={`${location.pathname === "/login" || location.pathname === "/cadastro" ? styles.navativa : {}}`}
           onClick={() => setPage("home")}
         >
           Login

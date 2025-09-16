@@ -15,7 +15,7 @@ export default function Login() {
   const [Email, setEmail] = useState("");
   const [Senha, setSenha] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Email:", Email, "Senha:", Senha);
   };
