@@ -27,7 +27,9 @@ export default function Perfil() {
       setLoading(false);
     }
   };
-
+  useEffect(async () => {
+    await fetchUsuario();
+  },[]);
   return (
     <div className={styles.profilepagecontainer}>
       <main className={styles.profilecontent}>
