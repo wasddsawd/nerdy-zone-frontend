@@ -9,12 +9,11 @@ export default function Home() {
   return (
     <>
       {/* Cabeçalho */}
-      <header className={styles.header}>
-        <Navbar />
-        <div className={styles.logo}>
-          <img src={nerdy} alt="Logo NerdyZone" />
-        </div>
-      </header>
+      <Navbar />
+
+      <div className={styles.logo}>
+        <img src={nerdy} alt="Logo NerdyZone" />
+      </div>
 
       <main className={styles.all}>
         <div className={styles.container}>
