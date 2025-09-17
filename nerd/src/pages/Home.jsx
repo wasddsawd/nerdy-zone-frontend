@@ -5,44 +5,51 @@ import '../styles/Geral.css'
 import nerdy from '../assets/nerdy.png'
 import Navbar from '../components/ui/navbar'
 
-export default function App() {
+export default function Home() {
   return (
     <>
-      <div className={styles.all}>
-        <div className={styles.container}>
-          {/* Cabeçalho */}
-          <div className={styles.logo}>
-            <img src={nerdy} alt="Logo NerdyZone" />
-          </div>
+      {/* Cabeçalho */}
+      <header className={styles.header}>
+        <Navbar />
+        <div className={styles.logo}>
+          <img src={nerdy} alt="Logo NerdyZone" />
+        </div>
+      </header>
 
+      <main className={styles.all}>
+        <div className={styles.container}>
           {/* Banner */}
           <section className={styles.banner}>
             <h1>Bem-vindo à NerdyZone</h1>
             <p>Seu portal geek e tecnológico!</p>
-            <button>Saiba Mais</button>
+            <button onClick={() => window.scrollTo(0, document.body.scrollHeight)}>
+              Saiba Mais
+            </button>
           </section>
 
           {/* Cards */}
           <section className={styles.cards_container}>
-            <div className={styles.card}>
+            <article className={styles.card}>
               <h2>Novidades</h2>
               <p>Fique por dentro das últimas tendências do mundo nerd.</p>
-            </div>
-            <div className={styles.card}>
+            </article>
+
+            <article className={styles.card}>
               <h2>Comunidade</h2>
               <p>Participe de eventos e troque experiências com outros fãs.</p>
-            </div>
-            <div className={styles.card}>
+            </article>
+
+            <article className={styles.card}>
               <h2>Loja</h2>
               <p>Encontre produtos exclusivos e colecionáveis.</p>
-            </div>
+            </article>
           </section>
         </div>
-      </div>
+      </main>
 
       {/* Rodapé */}
-      <footer>
-        <p className={styles.footer}>© 2025 NerdyZone. Todos os direitos reservados.</p>
+      <footer className={styles.footer}>
+        <p>© 2025 NerdyZone. Todos os direitos reservados.</p>
       </footer>
     </>
   )

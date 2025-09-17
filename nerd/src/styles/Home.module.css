@@ -83,16 +83,17 @@
 }
 
 /* ========================
-   CARDS
+   CARDS (lado direito)
 ======================== */
 .cards_container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* joga os cards para a direita */
   gap: 30px;
   padding: 50px 20px;
-  justify-items: center;
 }
 
+/* Cards padrão */
 .card {
   background: var(--color-dark);
   color: var(--color-light);
@@ -105,44 +106,40 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease forwards;
+  transform: translateX(40px);
+  animation: fadeInRight 0.6s ease forwards;
 }
 
+/* O "grande" mais à direita */
+.card.grande {
+  max-width: 400px; /* maior que os outros */
+  align-self: flex-end; /* força ir ainda mais à direita */
+}
+
+/* Delay para efeito cascata */
 .card:nth-child(1) {
   animation-delay: 0.2s;
 }
-
 .card:nth-child(2) {
   animation-delay: 0.4s;
 }
-
 .card:nth-child(3) {
   animation-delay: 0.6s;
 }
 
-.card h2 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 1rem;
-  color: #ccc;
-}
-
+/* Hover */
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateX(-8px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* ========================
    ANIMATIONS
 ======================== */
-@keyframes fadeInUp {
+@keyframes fadeInRight {
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
