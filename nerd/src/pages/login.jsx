@@ -13,6 +13,34 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Email:", Email, "Senha:", Senha);
+    try {
+      const response = await fetch("https://nerdyzone.onrender.com/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: Email,
+          senha: Senha,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success("Bem vindo!", {
+          className: "bg-card text-card-foreground border-border",
+        });
+        console.log(data.usuario);
+      } else {
+        toast.error(data.error || "Erro no login", {
+          className: "bg-card text-card-foreground border-border",
+        });
+      }
+    } catch (error) {
+      console.error("Erro na requisição:", error);
+      toast.error("Erro de conexão com o servidor", {
+        className: "bg-card text-card-foreground border-border",
+      });
+    }
   };
 
   // Quadrado: muda suavemente de cor somente se for para /cadastro
@@ -44,7 +72,11 @@ export default function Login() {
           <motion.div
             className={styles.conteudo}
             initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0, transition: { duration: 1, delay: 1 } }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1, delay: 1 },
+            }}
             exit={{ opacity: 0, y: 100, transition: { duration: 0 } }} // some instantâneo
           >
             <h1 className={styles.title}>Login</h1>
@@ -74,7 +106,11 @@ export default function Login() {
         <motion.div
           className={styles.pergunta}
           initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0, transition: { duration: 1, delay: 0.7 } }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: { duration: 1, delay: 0.7 },
+          }}
           exit={{ opacity: 0, y: 100, transition: { duration: 0 } }} // some instantâneo
         >
           <p className={styles.p}>Não possui uma conta?</p>
