@@ -21,6 +21,7 @@ export default function Cadastro() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          username: Username,
           email: Email,
           senha: Senha,
         }),
@@ -105,7 +106,7 @@ export default function Cadastro() {
                 value={Senha}
                 onChange={(e) => setSenha(e.target.value)}
               />
-              <Button_pra_login type="submit">Entrar</Button_pra_login>
+              <Button_pra_login type="submit">Cadastrar</Button_pra_login>
             </form>
           </motion.div>
         </div>
