@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
-
+//post do login do usuário
 export default function Login() {
   const location = useLocation();
   const [Email, setEmail] = useState("");

@@ -14,7 +14,7 @@ export default function Cadastro() {
   const [Senha, setSenha] = useState("");
   const [Username, setUsername] = useState("");
   const navigate = useNavigate();
-
+  //post do cadastro do usuario
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Email:", Email, "Senha:", Senha);

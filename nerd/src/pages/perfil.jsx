@@ -3,14 +3,12 @@ import styles from "../styles/perfil.module.css";
 
 export default function Perfil() {
   const [usuario, setUsuario] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   // Função para buscar dados do usuário
   const fetchUsuario = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("https://nerdyzone.onrender.com/login", {
+      const response = await fetch("https://nerdyzone.onrender.com/perfil", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
