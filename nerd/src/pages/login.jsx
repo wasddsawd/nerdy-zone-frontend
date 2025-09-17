@@ -33,7 +33,7 @@ export default function Login() {
           className: "bg-card text-card-foreground border-border",
         });
         console.log(data.usuario);
-        navigate("/Home");
+        navigate("/");
       } else {
         toast.error(data.error || "Erro no login", {
           className: "bg-card text-card-foreground border-border",

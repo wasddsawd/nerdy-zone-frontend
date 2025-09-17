@@ -5,6 +5,7 @@ import styles from "../styles/cadastro.module.css";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 
 export default function Cadastro() {
   const location = useLocation();
@@ -12,6 +13,7 @@ export default function Cadastro() {
   const [Email, setEmail] = useState("");
   const [Senha, setSenha] = useState("");
   const [Username, setUsername] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +33,10 @@ export default function Cadastro() {
       const data = await response.json();
 
       if (response.ok) {
-        toast.success("Usuário cadastrado com sucesso!",{ className: "bg-card text-card-foreground border-border"});
+        toast.success("Usuário cadastrado com sucesso!", {
+          className: "bg-card text-card-foreground border-border",
+        });
+        navigate("/login");
         console.log(data.usuario);
       } else {
         toast.error(data.error || "Erro no cadastro");
