@@ -8,9 +8,11 @@ import Eventos from "./pages/paginaEventos";
 import { AnimatedRoutes } from "./pages/AnimatedRoutes"; // seu arquivo com AnimatePresence
 import "./styles/Geral.css";
 import Navbar from "./components/ui/navbar";
+import { Toaster } from "sonner";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <Toaster position="bottom-right" />
     <Router>
       <Navbar page="home"/>
       <Routes> 
