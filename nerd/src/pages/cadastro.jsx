@@ -31,7 +31,7 @@ export default function Cadastro() {
       const data = await response.json();
 
       if (response.ok) {
-        toast.sucess("Usuário cadastrado com sucesso!");
+        toast.success("Usuário cadastrado com sucesso!",{ className: "bg-card text-card-foreground border-border"});
         console.log(data.usuario);
       } else {
         toast.error(data.error || "Erro no cadastro");
