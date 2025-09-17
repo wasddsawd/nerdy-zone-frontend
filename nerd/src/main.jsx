@@ -12,14 +12,14 @@ import Navbar from "./components/ui/navbar";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
-      <Navbar page="home"/>
-      <Routes> 
-        <Route path="/" element={<Home />} />
-        <Route path="/perfil" element={<Perfil />} />
-        <Route path="/paginaEventos" element={<Eventos />} />
-        {/* aqui não coloco mais login/cadastro */}
-      </Routes>
-      <AnimatedRoutes />
-    </Router>
+  <Navbar page="home" />
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/perfil" element={<Perfil />} />
+    <Route path="/paginaEventos" element={<Eventos />} />
+    {/* 👉 agrupa login/cadastro aqui dentro */}
+    <Route path="/*" element={<AnimatedRoutes />} />
+  </Routes>
+</Router>
   </React.StrictMode>
 );

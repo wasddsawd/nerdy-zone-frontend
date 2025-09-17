@@ -4,12 +4,10 @@ import { Button } from "../components/ui/Button";
 import { Input_pra_login } from "../components/layouts/Input";
 import styles from "../styles/cadastro.module.css";
 import { Link } from "react-router-dom";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Cadastro() {
-  const variants = {
-  exit: {backgroundColor: "#003569", transition: { duration: 1, delay: 0.6 } }
-}
+
 
 
   const [Email, setEmail] = useState("");
@@ -52,8 +50,6 @@ export default function Cadastro() {
           layoutId="quadrado"
           transition={{duration: 1}}
           key={location.pathname}
-          variants={variants}
-          exit="exit"
           className={styles.quadrado}></motion.div>
         <motion.div
           initial={{opacity:0, y: 100}}
