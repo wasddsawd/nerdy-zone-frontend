@@ -46,8 +46,8 @@ export default function Cadastro() {
       nextPath === "/login"
         ? {
             backgroundColor: "#003569",
-            transition: { duration: 0.8 }, // suave
-          }
+            transition: { duration: 0.8 },
+          } // suave
         : { opacity: 0, transition: { duration: 0 } }, // some instantâneo
   };
 

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { Button_pra_login } from "../components/layouts/Button_login";
 import { Input_pra_login } from "../components/layouts/Input";
 import styles from "../styles/login.module.css";
@@ -7,13 +7,6 @@ import { motion } from "framer-motion";
 
 export default function Login() {
   const location = useLocation();
-  const prevPath = useRef(null);
-
-  // Guarda o path anterior
-  useEffect(() => {
-    prevPath.current = location.pathname;
-  }, [location]);
-
   const [Email, setEmail] = useState("");
   const [Senha, setSenha] = useState("");
 
@@ -22,44 +15,37 @@ export default function Login() {
     console.log("Email:", Email, "Senha:", Senha);
   };
 
-  const variants = {
-    exit: () => {
-      if (prevPath.current === "/login" && location.pathname === "/cadastro") {
-        return {
-          backgroundColor: "#e49e09",
-          x: "-100%",
-          transition: { duration: 0.8 },
-        };
-      }
-      return {}; // não aplica nenhuma animação
-    },
+  // Quadrado: muda suavemente de cor somente se for para /cadastro
+  const quadradoVariants = {
+    exit: (nextPath) =>
+      nextPath === "/cadastro"
+        ? { backgroundColor: "#e49e09", transition: { duration: 0.8 } } // suave
+        : { opacity: 0, transition: { duration: 0 } }, // some instantâneo
   };
 
   return (
-    <motion.div
-      className={styles.container_principal}
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 1 }}
-      exit="exit"
-      variants={variants}
-    >
+    <div className={styles.container_principal}>
       <div className={styles.container_sub}>
         <div className={styles.container}>
+          {/* Quadrado com animação condicional */}
           <motion.div
             layoutId="quadrado"
-            transition={{ duration: 1 }}
+            key={location.pathname}
+            initial={{ backgroundColor: "#003569" }}
+            animate={{ backgroundColor: "#003569" }}
+            exit="exit"
+            variants={quadradoVariants}
+            custom={location.pathname}
+            transition={{ duration: 0.8 }}
             className={styles.quadrado}
           ></motion.div>
 
+          {/* Conteúdo */}
           <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              transition: { duration: 1, delay: 0.5 },
-            }}
-            exit={{ opacity: 0, y: 100, transition: { duration: 1.5 } }}
             className={styles.conteudo}
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0, transition: { duration: 1, delay: 1 } }}
+            exit={{ opacity: 0, y: 100, transition: { duration: 0 } }} // some instantâneo
           >
             <h1 className={styles.title}>Login</h1>
             <form className={styles.container_form} onSubmit={handleSubmit}>
@@ -84,15 +70,12 @@ export default function Login() {
           </motion.div>
         </div>
 
+        {/* Pergunta */}
         <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          animate={{
-            opacity: 1,
-            y: 0,
-            transition: { duration: 1, delay: 0.7 },
-          }}
-          exit={{ opacity: 0, y: 100 }}
           className={styles.pergunta}
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0, transition: { duration: 1, delay: 0.7 } }}
+          exit={{ opacity: 0, y: 100, transition: { duration: 0 } }} // some instantâneo
         >
           <p className={styles.p}>Não possui uma conta?</p>
           <Link className={styles.a} to="/cadastro">
@@ -100,6 +83,6 @@ export default function Login() {
           </Link>
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 }
