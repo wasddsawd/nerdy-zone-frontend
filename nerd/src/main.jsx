@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/perfil" element={<Perfil />} />
-    <Route path="/paginaEventos" element={<Eventos />} />
+    <Route path="/EventoPage" element={<Eventos />} />
     {/* 👉 agrupa login/cadastro aqui dentro */}
     <Route path="/*" element={<AnimatedRoutes />} />
   </Routes>
