@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button_pra_login } from "../components/layouts/Button_login";
 import { Input_pra_login } from "../components/layouts/Input";
 import styles from "../styles/cadastro.module.css";
