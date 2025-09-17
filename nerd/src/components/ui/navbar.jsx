@@ -11,28 +11,24 @@ export default function Navbar() {
         <Link
           to="/"
           className={location.pathname === "/" ? styles.navativa : ""}
-          onClick={() => setPage("home")}
         >
           Home
         </Link>
         <Link
           to="/perfil"
           className={`${location.pathname === "/perfil" ? styles.navativa : ""}`}
-          onClick={() => setPage("home")}
         >
           Perfil
         </Link>
         <Link
           to="/login"
           className={`${location.pathname === "/login" || location.pathname === "/cadastro" ? styles.navativa : ""}`}
-          onClick={() => setPage("home")}
         >
           Login
         </Link>
         <Link
           to="/paginaEventos"
           className={`${location.pathname === "/paginaEventos" ? styles.navativa : ""}`}
-          onClick={() => setPage("home")}
         >
           Eventos
         </Link>
