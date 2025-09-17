@@ -4,6 +4,7 @@ import { Input_pra_login } from "../components/layouts/Input";
 import styles from "../styles/cadastro.module.css";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 export default function Cadastro() {
   const location = useLocation();
@@ -30,14 +31,14 @@ export default function Cadastro() {
       const data = await response.json();
 
       if (response.ok) {
-        alert("Usuário cadastrado com sucesso!");
+        toast.sucess("Usuário cadastrado com sucesso!");
         console.log(data.usuario);
       } else {
-        alert(data.error || "Erro no cadastro");
+        toast.error(data.error || "Erro no cadastro");
       }
     } catch (error) {
       console.error("Erro na requisição:", error);
-      alert("Erro de conexão com o servidor");
+      toast.error("Erro de conexão com o servidor");
     }
   };
 
