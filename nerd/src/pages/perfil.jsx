@@ -9,6 +9,7 @@ export default function Perfil() {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch("https://nerdyzone.onrender.com/perfil", {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -27,9 +28,12 @@ export default function Perfil() {
       setLoading(false);
     }
   };
-  useEffect(async () => {
-    await fetchUsuario();
-  },[]);
+  useEffect(() => {
+    const carregarUsuario = async () => {
+      await fetchUsuario();
+    };
+    carregarUsuario();
+  }, []);
   return (
     <div className={styles.profilepagecontainer}>
       <main className={styles.profilecontent}>
@@ -39,9 +43,9 @@ export default function Perfil() {
               <div className={styles.profilepicture}></div>
             </div>
             <div className={styles.profiledetails}>
-              <p className={styles.profilename}>Nome:{usuario.username}</p>
-              <p className={styles.profileemail}>Email:{usuario.email}</p>
-              <p className={styles.profilecontact}>Tipo:{usuario.tipo_user}</p>
+              <p className={styles.profilename}>Nome:{usuario?.username}</p>
+              <p className={styles.profileemail}>Email:{usuario?.email}</p>
+              <p className={styles.profilecontact}>Tipo:{usuario?.tipo_user}</p>
             </div>
           </div>
 
