@@ -31,7 +31,7 @@ export default function Login() {
       localStorage.setItem(('token'), (data.token));
 
       if (response.ok) {
-        toast.success("Bem vindo!", {
+        toast.success(data.token, {
           className: "bg-card text-card-foreground border-border",
         });
         console.log("Informações recebidas");
