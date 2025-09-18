@@ -42,9 +42,9 @@ export default function Perfil() {
               <div className={styles.profilepicture}></div>
             </div>
             <div className={styles.profiledetails}>
-              <p className={styles.profilename}>Nome:{usuario?.username}</p>
-              <p className={styles.profileemail}>Email:{usuario?.email}</p>
-              <p className={styles.profilecontact}>Tipo:{usuario?.tipo_user}</p>
+              <p className={styles.profilename}>Nome: {usuario ? usuario.username : 'Carregando...'}</p>
+              <p className={styles.profileemail}>Email: {usuario ? usuario.email : 'Carregando...'}</p>
+              <p className={styles.profilecontact}>Tipo:{usuario ? usuario.tipo_user : 'Carregando...'}</p>
             </div>
           </div>
 
