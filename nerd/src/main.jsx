@@ -5,6 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import Perfil from "./pages/perfil";
 import Eventos from "./pages/paginaEventos";
+import venda from "./pages/venda";
 import { AnimatedRoutes } from "./pages/AnimatedRoutes"; // seu arquivo com AnimatePresence
 import "./styles/Geral.css";
 import Navbar from "./components/ui/navbar";
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Route path="/" element={<Home />} />
     <Route path="/perfil" element={<Perfil />} />
     <Route path="/EventoPage" element={<Eventos />} />
+    <Route path="/venda" element={<venda />} />
     {/* 👉 agrupa login/cadastro aqui dentro */}
     <Route path="/*" element={<AnimatedRoutes />} />
   </Routes>
