@@ -24,8 +24,6 @@ export default function Perfil() {
       setUsuario(data);
     } catch (err) {
       setError(err.message);
-    } finally {
-      setLoading(false);
     }
   };
   useEffect(() => {
