@@ -3,14 +3,9 @@ import React from 'react'
 import styles from '../styles/Home.module.css'
 import '../styles/Geral.css'
 import nerdy from '../assets/nerdy.png'
-import Navbar from '../components/ui/navbar'
-
 export default function Home() {
   return (
     <>
-      {/* Cabeçalho */}
-      <Navbar />
-
       <div className={styles.logo}>
         <img src={nerdy} alt="Logo NerdyZone" />
       </div>
@@ -36,6 +31,11 @@ export default function Home() {
             <article className={styles.card}>
               <h2>Comunidade</h2>
               <p>Participe de eventos e troque experiências com outros fãs.</p>
+            </article>
+
+            <article className={styles.card}>
+              <h2>sistema</h2>
+              <p>sistemas de rpg, e outros itens para sua jogatina.</p>
             </article>
 
             <article className={styles.card}>

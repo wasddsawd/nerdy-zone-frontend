@@ -1,4 +1,6 @@
-/* Reset básico */
+/* ========================
+   RESET BÁSICO
+======================== */
 *,
 *::before,
 *::after {
@@ -7,7 +9,9 @@
   padding: 0;
 }
 
-/* Variáveis padrão (edite conforme sua paleta) */
+/* ========================
+   VARIÁVEIS
+======================== */
 :root {
   --color-primary: #0b6fff;
   --color-dark: #0b1220;
@@ -18,8 +22,8 @@
 }
 
 /* ========================
-   GLOBAL STYLES
-   =======================*/
+   GLOBAL
+======================== */
 .all {
   font-family: 'Montserrat', sans-serif;
   background-image: linear-gradient(135deg, var(--color-primary), var(--color-dark));
@@ -36,7 +40,7 @@
 
 /* ========================
    CONTAINER
-   =======================*/
+======================== */
 .container {
   max-width: 1200px;
   width: 100%;
@@ -46,21 +50,21 @@
 
 /* ========================
    LOGO
-   =======================*/
+======================== */
 .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 4px;
   filter: drop-shadow(0 0 20px rgb(0, 183, 255));
 }
 .logo img {
-  height: 200px;
+  height: 100%;
 }
 
 /* ========================
    BANNER
-   =======================*/
+======================== */
 .banner {
   background: var(--color-dark);
   padding: 80px 20px;
@@ -96,89 +100,48 @@
 }
 
 /* ========================
-   CARDS - base e variantes
-   =======================*/
-/* base shared */
+   CARDS
+======================== */
 .cards_container {
-  padding: 50px 20px;
-  gap: 30px;
-}
-
-/* Variante: alinhados à direita (use class="cards_container right") */
-.cards_container.right {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-wrap: wrap; /* quebra linha quando precisar */
+  justify-content: flex-end; /* joga tudo pro lado direito */
+  align-items: first baseline; /* alinha pelo topo */
+  gap: 20px;
+  padding: 50px 20px;
 }
 
-/* Variante: grid centralizado (use class="cards_container grid") */
-.cards_container.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  justify-items: center;
-  align-items: start;
-}
-
-/* card base (sem transformar por padrão) */
+/* card base */
 .card {
   background: var(--color-dark);
   color: var(--color-light);
-  width: 100%;
-  max-width: 300px;
+  width: 280px;
   padding: 25px 20px;
   border-radius: 12px;
   text-align: left;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
+  opacity: 1;
 }
 
-/* animação / estado inicial por variante */
-.cards_container.right .card {
-  transform: translateX(40px);
-  animation: fadeInRight 0.6s ease forwards;
-}
-.cards_container.grid .card {
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-/* .grande para cada contexto */
+/* card grandão */
 .card.grande {
-  max-width: 400px;
-}
-.cards_container.right .card.grande {
-  align-self: flex-end;
-}
-.cards_container.grid .card.grande {
-  justify-self: end;
+  flex: 1 1 600px; /* cresce e ocupa mais espaço */
+  max-width: 600px;
+  padding: 35px 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* delays em cascata (funciona para ambos) */
-.cards_container .card:nth-child(1) {
-  animation-delay: 0.2s;
-}
-.cards_container .card:nth-child(2) {
-  animation-delay: 0.4s;
-}
-.cards_container .card:nth-child(3) {
-  animation-delay: 0.6s;
-}
-
-/* hover distinto por variante */
-.cards_container.right .card:hover {
-  transform: translateX(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-.cards_container.grid .card:hover {
+/* hover */
+.card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* ========================
    ANIMAÇÕES
-   =======================*/
+======================== */
 @keyframes fadeInRight {
   to {
     opacity: 1;
@@ -194,7 +157,7 @@
 
 /* ========================
    FOOTER
-   =======================*/
+======================== */
 .footer {
   width: 100%;
   text-align: center;
@@ -204,8 +167,8 @@
 }
 
 /* ========================
-   Responsividade rápida (ajustes)
-   =======================*/
+   RESPONSIVIDADE
+======================== */
 @media (max-width: 600px) {
   .logo img {
     height: 140px;
@@ -213,10 +176,10 @@
   .banner {
     padding: 40px 12px;
   }
-  .cards_container.right {
-    align-items: center;
-  } /* em telas pequenas, centraliza os cards para evitar overflow */
-  .cards_container.grid {
-    grid-template-columns: 1fr;
+  .cards_container {
+    justify-content: center; /* em telas pequenas, centraliza */
+  }
+  .card.grande {
+    max-width: 100%;
   }
 }
