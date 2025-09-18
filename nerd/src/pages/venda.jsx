@@ -10,17 +10,14 @@ export default function Venda() {
 
     return (
         <div className={styles.appcontainer}>
-            <header className={styles.appheader}>
+            <header className={styles.Banner}>
                 <h1>Troca e venda</h1>
-                <div className={styles.banner}>
-                    <span>Banner</span>
-                </div>
             </header>
             <div className={styles.maincontent}>
                 <aside className={styles.sidebar}>
                     <div className={styles.sidebarbuttons}>
-                        <button className={styles.sidebarbtn}>Botão Venda</button>
-                        <button className={styles.sidebarbtn}>Botão Venda</button>
+                        <button className={styles.sidebarbtn}>Produtos</button>
+                        <button className={styles.sidebarbtn}>Vender</button>
                     </div>
                     <div className={styles.classificarsection}>
                         <h3>Classificar Itens</h3>

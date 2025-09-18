@@ -14,28 +14,21 @@
   color: var(--color-text);
 }
 
-.appheader {
+.Banner {
   background-color: var(--color-dark);
   padding: 1rem 2rem;
   border-bottom: 1px solid var(--color-primary);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  height: 200px;
 }
 
-.appheader h1 {
+.Banner h1 {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--color-text);
   margin: 0;
-}
-
-.banner {
-  background-color: var(--color-primary);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  color: var(--color-text);
-  font-weight: 500;
 }
 
 .maincontent {
@@ -156,8 +149,14 @@
   margin: 0;
 }
 
+@media (min-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
-  .main-content {
+  .maincontent {
     flex-direction: column;
   }
   
@@ -165,18 +164,24 @@
     width: 100%;
     border-right: none;
     border-bottom: 1px solid var(--color-primary);
+    padding: 1rem;
   }
   
   .sidebarbuttons {
     flex-direction: row;
+    gap: 1rem;
+  }
+  
+  .sidebarbtn {
+    flex: 1;
+    text-align: center;
   }
   
   .productsgrid {
-    grid-template-columns: 1fr;
     padding: 1rem;
   }
   
-  .appheader {
+  .Banner {
     padding: 1rem;
     flex-direction: column;
     gap: 1rem;
@@ -184,8 +189,3 @@
   }
 }
 
-@media (min-width: 1200px) {
-  .products-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}

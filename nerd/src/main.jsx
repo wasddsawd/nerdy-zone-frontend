@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Route path="/" element={<Home />} />
     <Route path="/perfil" element={<Perfil />} />
     <Route path="/EventoPage" element={<Eventos />} />
-    <Route path="/Venda" element={<venda />} />
+    <Route path="/Venda" element={<Venda />} />
     {/* 👉 agrupa login/cadastro aqui dentro */}
     <Route path="/*" element={<AnimatedRoutes />} />
   </Routes>
