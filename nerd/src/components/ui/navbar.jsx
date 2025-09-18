@@ -27,8 +27,8 @@ export default function Navbar() {
           Login
         </Link>
         <Link
-          to="/paginaEventos"
-          className={`${location.pathname === "/paginaEventos" ? styles.navativa : ""}`}
+          to="/EventosPage"
+          className={`${location.pathname === "/EventosPage" ? styles.navativa : ""}`}
         >
           Eventos
         </Link>
