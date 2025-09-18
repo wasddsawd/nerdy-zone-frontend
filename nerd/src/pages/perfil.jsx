@@ -38,7 +38,7 @@ export default function Perfil() {
         <section className={styles.profileinfosection}>
           <div className={styles.profileheader}>
             <div className={styles.profilepicturecontainer}>
-              <div className={styles.profilepicture}><img src="{usuario ? usuario.username : 'Carregando...'}" alt="" /></div>
+              <div className={styles.profilepicture}></div>
             </div>
             <div className={styles.profiledetails}>
               <p className={styles.profilename}>Nome: {usuario ? usuario.username : 'Carregando...'}</p>
