@@ -49,14 +49,8 @@ export default function Cadastro() {
 
   // quadrado troca de cor suavemente só se for para /login
   const quadradoVariants = {
-    exit: (nextPath) =>
-      nextPath === "/login"
-        ? {
-            backgroundColor: "#003569",
-            transition: { duration: 0.8 },
-          } // suave
-        : { opacity: 0, transition: { duration: 0 } }, // some instantâneo
-  };
+    exit: {backgroundColor: "#003569", transition: { duration: 0.7 } }
+};
 
   return (
     <div className={styles.container_principal}>
@@ -66,8 +60,6 @@ export default function Cadastro() {
           <motion.div
             layoutId="quadrado"
             key={location.pathname}
-            initial={{ backgroundColor: "#e49e09" }}
-            animate={{ backgroundColor: "#e49e09" }}
             exit="exit"
             variants={quadradoVariants}
             custom={location.pathname}
@@ -83,7 +75,7 @@ export default function Cadastro() {
               y: 0,
               transition: { duration: 1, delay: 1 },
             }}
-            exit={{ opacity: 0, y: 100, transition: { duration: 0 } }} // some instantâneo
+            exit={{ opacity: 0, y: 100, transition: { duration: 0.5 } }} // some instantâneo
             className={styles.conteudo}
           >
             <h1 className={styles.title}>Cadastro</h1>
@@ -125,7 +117,7 @@ export default function Cadastro() {
             y: 0,
             transition: { duration: 1, delay: 0.7 },
           }}
-          exit={{ opacity: 0, y: 100, transition: { duration: 0 } }} // some instantâneo
+          exit={{ opacity: 0, y: 100, transition: { duration: 0.5 } }} // some instantâneo
           className={styles.pergunta}
         >
           <p className={styles.p}>Possui uma conta?</p>

@@ -49,11 +49,8 @@ export default function Login() {
 
   // Quadrado: muda suavemente de cor somente se for para /cadastro
   const quadradoVariants = {
-    exit: (nextPath) =>
-      nextPath === "/cadastro"
-        ? { backgroundColor: "#e49e09", transition: { duration: 0.8 } } // suave
-        : { opacity: 0, transition: { duration: 0 } }, // some instantâneo
-  };
+    exit: {backgroundColor: "#e49e09", transition: { duration: 0.7 } }
+};
 
   return (
     <div className={styles.container_principal}>
@@ -63,8 +60,6 @@ export default function Login() {
           <motion.div
             layoutId="quadrado"
             key={location.pathname}
-            initial={{ backgroundColor: "#003569" }}
-            animate={{ backgroundColor: "#003569" }}
             exit="exit"
             variants={quadradoVariants}
             custom={location.pathname}
@@ -81,7 +76,7 @@ export default function Login() {
               y: 0,
               transition: { duration: 1, delay: 1 },
             }}
-            exit={{ opacity: 0, y: 100, transition: { duration: 0 } }} // some instantâneo
+            exit={{ opacity: 0, y: 100, transition: { duration: 0.5 } }} // some instantâneo
           >
             <h1 className={styles.title}>Login</h1>
             <form className={styles.container_form} onSubmit={handleSubmit}>
@@ -115,7 +110,7 @@ export default function Login() {
             y: 0,
             transition: { duration: 1, delay: 0.7 },
           }}
-          exit={{ opacity: 0, y: 100, transition: { duration: 0 } }} // some instantâneo
+          exit={{ opacity: 0, y: 100, transition: { duration: 0.5 } }} // some instantâneo
         >
           <p className={styles.p}>Não possui uma conta?</p>
           <Link className={styles.a} to="/cadastro">

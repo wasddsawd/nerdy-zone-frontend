@@ -8,7 +8,7 @@ import Eventos from "./pages/paginaEventos";
 import { AnimatedRoutes } from "./pages/AnimatedRoutes"; // seu arquivo com AnimatePresence
 import "./styles/Geral.css";
 import Navbar from "./components/ui/navbar";
-import { Toaster } from "sonner";
+import { Toaster } from "./components/ui/sonner";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
