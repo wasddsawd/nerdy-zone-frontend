@@ -21,6 +21,7 @@ export default function Perfil() {
       if (!response.ok) throw new Error("Erro ao buscar usuário");
 
       const data = await response.json();
+      console.log(data.perfil)
       setUsuario(data.perfil);
     } catch (err) {
       setError(err.message);
