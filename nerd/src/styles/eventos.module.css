@@ -9,8 +9,9 @@
 .container_esquerda {
   width: 25%;
   height: 100%;
-  background-color: black;
-  border-radius: 5px;
+  background-color: rgb(31, 0, 188);
+  border: 3px solid #0080ff;
+  border-radius: 7px;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -20,7 +21,35 @@
   display: flex;
   flex-direction: row;
   gap: 5px;
+  justify-content: center;
+  align-items: center;
   font-size: 30px;
+  background-color: blue;
+  border: 2px solid #00158c;
+  border-radius: 40px;
+  padding-inline: 7px;
+}
+
+.check:has(input[type="checkbox"]:checked) {
+  background-color: #9202af;
+  border: 2px solid rgb(65, 0, 114);
+}
+
+p{
+  position: relative;
+  z-index: 1;
+}
+
+input {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  background-color: #f0f0f0;
+  transition: 0.2s;
+  display: none;
 }
 
 .check_la {
@@ -28,28 +57,4 @@
   flex-wrap: wrap;
   gap: 10px 20px; /* substitui row-gap/column-gap */
   align-items: center;
-}
-
-.check:has(input[type="checkbox"]:checked) p {
-  font-family: "Bitcount Grid Single Ink", system-ui;
-  font-size: 34px !important
-}
-
-
-.bitcount-grid-single-ink {
-  font-family: "Bitcount Grid Single Ink", system-ui;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "slnt" 0,
-    "CRSV" 0.5,
-    "ELSH" 0,
-    "ELXP" 0,
-    "SZP1" 0,
-    "SZP2" 0,
-    "XPN1" 0,
-    "XPN2" 0,
-    "YPN1" 0,
-    "YPN2" 0;
 }
