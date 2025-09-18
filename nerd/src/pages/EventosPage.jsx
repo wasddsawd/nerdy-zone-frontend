@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function EventosPage() {
+export default function EventosPage() {
   const [eventos, setEventos] = useState([]);
   const [titulo, setTitulo] = useState('');
   const [data, setData] = useState('');
@@ -70,8 +70,6 @@ function EventosPage() {
     </div>
   );
 }
-
-export default EventosPage;
 
 const styles = {
   container: {
