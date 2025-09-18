@@ -27,12 +27,14 @@ export default function Login() {
       });
 
       const data = await response.json();
+      //Armazenar o jwt recebido no localstorage para uso nas rotas autenticadas
+      localStorage.setItem((key = "token"), (value = data));
 
       if (response.ok) {
         toast.success("Bem vindo!", {
           className: "bg-card text-card-foreground border-border",
         });
-        console.log(data.usuario);
+        console.log("Informações recebidas");
         navigate("/");
       } else {
         toast.error(data.error || "Erro no login", {
@@ -49,8 +51,8 @@ export default function Login() {
 
   // Quadrado: muda suavemente de cor somente se for para /cadastro
   const quadradoVariants = {
-    exit: {backgroundColor: "#e49e09", transition: { duration: 0.7 } }
-};
+    exit: { backgroundColor: "#e49e09", transition: { duration: 0.7 } },
+  };
 
   return (
     <div className={styles.container_principal}>
