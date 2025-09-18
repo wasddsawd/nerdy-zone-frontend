@@ -32,6 +32,12 @@ export default function Navbar() {
         >
           Eventos
         </Link>
+        <Link
+          to="/venda"
+          className={`${location.pathname === "/venda" ? styles.navativa : ""}`}
+        >
+          Troca e Venda
+        </Link>
       </div>
     </nav>
   );
