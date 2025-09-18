@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/venda.module.css";
-export default function venda() {
+
+export default function Venda() {
     const products = Array.from({ length: 8 }, (_, i) => ({
         id: i + 1,
         title: `Produto ${i + 1}`,
