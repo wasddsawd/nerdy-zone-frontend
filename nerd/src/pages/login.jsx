@@ -28,7 +28,7 @@ export default function Login() {
 
       const data = await response.json();
       //Armazenar o jwt recebido no localstorage para uso nas rotas autenticadas
-      localStorage.setItem((key = "token"), (value = data));
+      localStorage.setItem(('token'), (data));
 
       if (response.ok) {
         toast.success("Bem vindo!", {
