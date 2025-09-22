@@ -10,6 +10,7 @@
 .dentro {
     display: flex;
     justify-content: space-around;
+    padding-inline: 100px;
     font-size: 1.3rem;
     width: 100%;
 }
