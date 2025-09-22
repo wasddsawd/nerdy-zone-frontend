@@ -2,10 +2,13 @@ import * as React from "react";
 import "../../styles/Geral.css";
 import styles from "../../styles/navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
-import UserMenu from "./UserMenu";
- 
+
+
+import UserMenu from "./UserMenu"; 
+
 export default function Navbar() {
   const location = useLocation();
+
   return (
     <nav className={styles.fora}>
       <div className={styles.dentro}>
