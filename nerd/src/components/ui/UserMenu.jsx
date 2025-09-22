@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa'; 
-import styles from '../../styles/UserMenu.module.css';
+import styles from '../../styles/userMenu.module.css';
 
 // precisa dar npm install react-icons para funcionar 
 
