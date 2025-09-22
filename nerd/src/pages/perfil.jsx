@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "../styles/perfil.module.css";
+import Upload from "../components/ui/upload";
 
 export default function Perfil() {
   const [usuario, setUsuario] = useState(null);
@@ -38,12 +39,21 @@ export default function Perfil() {
         <section className={styles.profileinfosection}>
           <div className={styles.profileheader}>
             <div className={styles.profilepicturecontainer}>
-              <div className={styles.profilepicture}></div>
+              <div className={styles.profilepicture}>
+                <img src={usuario ? usuario.link : "Carregando..."} alt="" />
+                <Upload />
+              </div>
             </div>
             <div className={styles.profiledetails}>
-              <p className={styles.profilename}>Nome: {usuario ? usuario.username : 'Carregando...'}</p>
-              <p className={styles.profileemail}>Email: {usuario ? usuario.email : 'Carregando...'}</p>
-              <p className={styles.profilecontact}>Tipo: {usuario ? usuario.tipo_user : 'Carregando...'}</p>
+              <p className={styles.profilename}>
+                Nome: {usuario ? usuario.username : "Carregando..."}
+              </p>
+              <p className={styles.profileemail}>
+                Email: {usuario ? usuario.email : "Carregando..."}
+              </p>
+              <p className={styles.profilecontact}>
+                Tipo: {usuario ? usuario.tipo_user : "Carregando..."}
+              </p>
             </div>
           </div>
 
