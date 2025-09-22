@@ -59,10 +59,6 @@
   transition: transform 0.3s ease;
 }
 
-.profilepicture:hover {
-  transform: scale(1.05);
-}
-
 .profiledetails {
   flex: 1;
 }
@@ -264,4 +260,17 @@
   .blogcontent {
     font-size: 1rem;
   }
+}
+
+.mais {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  left: 90px;
+  top: 55px;
+  transition: 0.2s ease;
+}
+
+.profilepicture:hover .mais {
+  transform: scale(1.3);
 }
