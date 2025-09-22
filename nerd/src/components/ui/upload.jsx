@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import mais from "../../assets/mais.svg"
+import styles from "../../styles/perfil.module.css"
 
 export default function UploadFotoPerfil() {
   const [imagem, setImagem] = useState(null);
@@ -49,7 +50,7 @@ export default function UploadFotoPerfil() {
 
   return (
     <div>
-        <label htmlFor="upload"><img src={mais} alt="" /></label>
+        <label htmlFor="upload"><img src={mais} alt="image" className={styles.mais}/></label>
       <input id="upload" type="file" accept="image/*" onChange={handleChange} />
     </div>
   );

@@ -6,7 +6,7 @@ export default function EventsPage() {
     <div className={styles.events_page}>
       {/* Banner */}
       <header className={styles.events_banner}>
-        <img className={styles.img}/>
+        <div className={styles.img}/>
       </header>
 
       <div className={styles.events_layout}>
@@ -46,12 +46,14 @@ export default function EventsPage() {
           </section>
         </aside>
 
-        {/* Main Content */}
-        <main className={styles.events_main}>
-          <section className={styles.countdown}>
+      <div className={styles.container}>
+        <section className={styles.countdown}>
             <h2>Próximo Evento em:</h2>
             <div className={styles.countdown_timer}>00d 00h 00m 00s</div>
           </section>
+
+        {/* Main Content */}
+        <main className={styles.events_main}>
 
           <section className={styles.upcoming_events}>
             <h2>Eventos Futuros</h2>
@@ -69,6 +71,7 @@ export default function EventsPage() {
           </section>
         </main>
       </div>
+    </div>
     </div>
   );
 }
