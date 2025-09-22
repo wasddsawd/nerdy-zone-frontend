@@ -26,7 +26,7 @@ export default function Perfil() {
       setUsuario(data.perfil);
 
       // Busca a foto do perfil
-      const fotoRes = await fetch("https://nerdyzone.onrender.com/perfil/foto", {
+      const fotoRes = await fetch("https://nerdyzone.onrender.com/foto", {
         headers: { Authorization: `Bearer ${token}` },
       });
 

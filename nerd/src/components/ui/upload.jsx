@@ -23,7 +23,7 @@ export default function UploadFotoPerfil() {
         const formData = new FormData();
         formData.append("imagem", imagem);
 
-        const response = await fetch("https://nerdyzone.onrender.com/perfil/foto", {
+        const response = await fetch("https://nerdyzone.onrender.com/foto", {
           method: "PATCH", // ALTERAÇÃO: PATCH em vez de POST
           headers: {
             Authorization: `Bearer ${token}`,
