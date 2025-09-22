@@ -9,9 +9,11 @@
 }
 .dentro {
     display: flex;
-    justify-content: space-around;
+    justify-content: end;
     font-size: 1.3rem;
     width: 100%;
+    gap: 2rem;
+    margin-right: 2rem;
 }
 .navativa{
     display: block;
