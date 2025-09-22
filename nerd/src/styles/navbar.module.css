@@ -9,7 +9,7 @@
 }
 .dentro {
     display: flex;
-    justify-content: end;
+    justify-content: space-around;
     font-size: 1.3rem;
     width: 100%;
     gap: 2rem;
