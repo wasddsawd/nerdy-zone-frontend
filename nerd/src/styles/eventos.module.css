@@ -54,9 +54,15 @@
 /* Main content */
 .events_main {
   flex: 1;
-  padding: 1rem;
   height: 20rem;
   overflow-y: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
 }
 
 .countdown_timer {
