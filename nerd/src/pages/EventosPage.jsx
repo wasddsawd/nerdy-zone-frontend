@@ -1,90 +1,76 @@
-import { useState } from "react";
-import styles from "../styles/eventos.module.css"
+import React from "react";
+import styles from "../styles/eventos.module.css";
 
-export default function Eventos() {
-  const [eventos, setEventos] = useState([
-    { id: 1, titulo: "Evento React", data: "2025-10-01", descricao: "Aprender React" },
-    { id: 2, titulo: "Festa Nerd", data: "2025-11-15", descricao: "Festa com jogos e tech" },
-  ]);
-
-  const [novoEvento, setNovoEvento] = useState({
-    titulo: "",
-    data: "",
-    descricao: "",
-  });
-
-  // Atualiza os dados do formulário
-  function handleChange(e) {
-    setNovoEvento({ ...novoEvento, [e.target.name]: e.target.value });
-  }
-
-  // Adiciona novo evento
-  function adicionarEvento(e) {
-    e.preventDefault();
-    if (!novoEvento.titulo || !novoEvento.data) {
-      alert("Preencha o título e a data!");
-      return;
-    }
-
-    setEventos([
-      ...eventos,
-      { id: Date.now(), ...novoEvento },
-    ]);
-
-    setNovoEvento({ titulo: "", data: "", descricao: "" });
-  }
-
+export default function EventsPage() {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h2 className={styles.title}>Criar novo evento</h2>
+    <div className={styles.events_page}>
+      {/* Banner */}
+      <header className={styles.events_banner}>
+        <img className={styles.img}/>
+      </header>
 
-        <input
-          type="text"
-          name="titulo"
-          placeholder="Nome do evento"
-          value={novoEvento.titulo}
-          onChange={handleChange}
-          className={styles.input}
-          required
-        />
+      <div className={styles.events_layout}>
+        {/* Sidebar */}
+        <aside className={styles.events_sidebar}>
+          <section className={styles.filters}>
+            <h2>Filtros</h2>
+            <label><input type="checkbox" /> Anime</label>
+            <label><input type="checkbox" /> Games</label>
+            <label><input type="checkbox" /> HQs</label>
+            <label><input type="checkbox" /> Cosplay</label>
+            <label><input type="checkbox" /> Tecnologia</label>
+          </section>
 
-        <input
-          type="date"
-          name="data"
-          value={novoEvento.data}
-          onChange={handleChange}
-          className={styles.input}
-          required
-        />
+          <section className={styles.calendar}>
+            <h2>Calendário</h2>
+            {/* calendário futuro */}
+            <div className={styles.calendar_placeholder}>[Calendário]</div>
+          </section>
 
-        <textarea
-          name="descricao"
-          placeholder="Detalhes do evento (opcional)"
-          value={novoEvento.descricao}
-          onChange={handleChange}
-          className={styles.textarea}
-        />
+          <section className={styles.featured}>
+            <h2>Destaques</h2>
+            <ul>
+              <li>Evento 1</li>
+              <li>Evento 2</li>
+            </ul>
+          </section>
 
-        <button onClick={adicionarEvento} className={styles.button}>
-          Adicionar Evento
-        </button>
+          <section className={styles.gallery}>
+            <h2>Galeria</h2>
+            <div className={styles.gallery_placeholder}>[Imagens]</div>
+          </section>
 
-        {/* Lista de eventos */}
-        <h3 className={{ mrginTop: 40 }}>Lista de eventos</h3>
-        {eventos.length === 0 ? (
-          <p>Nenhum evento cadastrado.</p>
-        ) : (
-          eventos.map((ev) => (
-            <div key={ev.id} className={styles.card}>
-              <h3 className={{ mrginBottom: 5 }}>{ev.titulo}</h3>
-              <p><strong>Data:</strong> {ev.data}</p>
-              <p><strong>Descrição:</strong> {ev.descricao || "Sem descrição"}</p>
+          <section className={styles.comments}>
+            <h2>Comentários</h2>
+            <div className={styles.comments_placeholder}>[Comentários]</div>
+          </section>
+        </aside>
+
+        {/* Main Content */}
+        <main className={styles.events_main}>
+          <section className={styles.countdown}>
+            <h2>Próximo Evento em:</h2>
+            <div className={styles.countdown_timer}>00d 00h 00m 00s</div>
+          </section>
+
+          <section className={styles.upcoming_events}>
+            <h2>Eventos Futuros</h2>
+            <div className={styles.event_card}>
+              <h3>Nome do Evento</h3>
+              <button>Inscrever-se</button>
             </div>
-          ))
-        )}
-      </main>
+          </section>
+
+          <section className={styles.event_details}>
+            <h2>Detalhes</h2>
+            <div className={styles.map_placeholder}>[Mapa]</div>
+            <div className={styles.guests_placeholder}>[Convidados]</div>
+            <div className={styles.competitions_placeholder}>[Competições]</div>
+          </section>
+        </main>
+      </div>
     </div>
   );
 }
+
 
