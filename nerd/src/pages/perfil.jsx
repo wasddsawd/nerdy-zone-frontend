@@ -27,12 +27,13 @@ export default function Perfil() {
 
       // Busca a foto do perfil
       const fotoRes = await fetch("https://nerdyzone.onrender.com/foto", {
-        headers: { Authorization: `Bearer ${token}` },
+        method: "GET",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       });
 
       if (fotoRes.ok) {
         const fotoData = await fotoRes.json();
-        setFoto(fotoData.link); // assume { link: "url_da_imagem" }
+        setFoto(fotoData.url); // assume { link: "url_da_imagem" }
       }
     } catch (err) {
       setError(err.message);
