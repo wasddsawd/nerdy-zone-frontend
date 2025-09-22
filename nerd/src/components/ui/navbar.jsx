@@ -1,8 +1,9 @@
 import * as React from "react";
-import { useState } from 'react'
 import "../../styles/Geral.css";
 import styles from "../../styles/navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
+import UserMenu from "./UserMenu";
+ 
 export default function Navbar() {
   const location = useLocation();
   return (
@@ -13,18 +14,6 @@ export default function Navbar() {
           className={location.pathname === "/" ? styles.navativa : ""}
         >
           Home
-        </Link>
-        <Link
-          to="/perfil"
-          className={`${location.pathname === "/perfil" ? styles.navativa : ""}`}
-        >
-          Perfil
-        </Link>
-        <Link
-          to="/login"
-          className={`${location.pathname === "/login" || location.pathname === "/cadastro" ? styles.navativa : ""}`}
-        >
-          Login
         </Link>
         <Link
           to="/EventosPage"
@@ -38,6 +27,9 @@ export default function Navbar() {
         >
           Troca e Venda
         </Link>
+      </div>
+      <div className={styles.cantoDireito}>
+        <UserMenu />
       </div>
     </nav>
   );
