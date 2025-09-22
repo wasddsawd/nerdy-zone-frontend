@@ -21,7 +21,6 @@ export default function Perfil() {
       if (!response.ok) throw new Error("Erro ao buscar usuário");
 
       const data = await response.json();
-      console.log(data.perfil);
       setUsuario(data.perfil);
     } catch (err) {
       setError(err.message);
@@ -44,7 +43,7 @@ export default function Perfil() {
             <div className={styles.profiledetails}>
               <p className={styles.profilename}>Nome: {usuario ? usuario.username : 'Carregando...'}</p>
               <p className={styles.profileemail}>Email: {usuario ? usuario.email : 'Carregando...'}</p>
-              <p className={styles.profilecontact}>Tipo:{usuario ? usuario.tipo_user : 'Carregando...'}</p>
+              <p className={styles.profilecontact}>Tipo: {usuario ? usuario.tipo_user : 'Carregando...'}</p>
             </div>
           </div>
 
