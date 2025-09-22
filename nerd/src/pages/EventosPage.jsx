@@ -6,7 +6,7 @@ export default function EventsPage() {
     <div className={styles.events_page}>
       {/* Banner */}
       <header className={styles.events_banner}>
-        <img className={styles.img}/>
+        <div className={styles.img}/>
       </header>
 
       <div className={styles.events_layout}>
