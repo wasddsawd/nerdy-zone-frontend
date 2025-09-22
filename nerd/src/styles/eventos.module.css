@@ -1,60 +1,73 @@
-@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Bitcount+Grid+Single+Ink:wght@100..900&family=Bitcount+Ink:wght@100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Lexend+Deca:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+NSW:wght@100..400&family=Playwrite+MX+Guides&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
-.container_principal {
-  width: 100%;
-  height: 92vh;
-  padding: 50px;
-}
-
-.container_esquerda {
-  width: 25%;
-  height: 100%;
-  background-color: rgb(31, 0, 188);
-  border: 3px solid #0080ff;
-  border-radius: 7px;
+.events_page {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  height: max-content;
+  background-color: #000; /* fundo preto */
+  color: #fff; /* texto branco */
+  font-family: sans-serif;
 }
 
-.check {
+.events_banner {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-bottom: 2px solid #fcc800; /* dourado */
+  padding: 20rem;
+  text-align: center;
+  background-image: url('../assets/Mídia.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.events_layout {
   display: flex;
-  flex-direction: row;
-  gap: 5px;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  background-color: blue;
-  border: 2px solid #00158c;
-  border-radius: 40px;
-  padding-inline: 7px;
+  flex: 1;
+  min-height: 55rem;
 }
 
-.check:has(input[type="checkbox"]:checked) {
-  background-color: #9202af;
-  border: 2px solid rgb(65, 0, 114);
+/* Sidebar */
+.events_sidebar {
+  width: 250px;
+  background-color: #111;
+  border-right: 1px solid #fff;
+  padding: 1rem;
+  overflow-y: auto;
 }
 
-p{
-  position: relative;
-  z-index: 1;
+.events_sidebar h2 {
+  color: #fcc800;
+  margin-bottom: 0.5rem;
 }
 
-input {
-  display: inline-block;
-  padding: 10px 20px;
-  border: 2px solid #333;
-  border-radius: 6px;
+.events_sidebar label {
+  display: block;
+  margin: 0.3rem 0;
+}
+
+/* Main content */
+.events_main {
+  flex: 1;
+  padding: 1rem;
+  height: 20rem;
+  overflow-y: auto;
+}
+
+.countdown_timer {
+  font-size: 1.5rem;
+  color: #00aaff; /* azul para destaque */
+}
+
+.event_card {
+  background-color: #222;
+  border: 1px solid #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.event_card button {
+  background-color: #fcc800;
+  border: none;
+  padding: 0.5rem 1rem;
   cursor: pointer;
-  user-select: none;
-  background-color: #f0f0f0;
-  transition: 0.2s;
-  display: none;
-}
-
-.check_la {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 20px; /* substitui row-gap/column-gap */
-  align-items: center;
+  color: #000;
+  font-weight: bold;
 }
