@@ -37,9 +37,6 @@ export default function UserMenu  () {
           <Link to="/login" onClick={() => setIsOpen(false)}>
             Login
           </Link>
-          <Link to="/cadastro" onClick={() => setIsOpen(false)}>
-            Cadastre-se
-          </Link>
         </div>
       )}
     </div>
