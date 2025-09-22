@@ -1,53 +1,56 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import mais from "../../assets/mais.svg"
 
 export default function UploadFotoPerfil() {
-  const [preview, setPreview] = useState(null); // preview local
-  const [uploading, setUploading] = useState(false);
+  const [imagem, setImagem] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleFileChange = async (e) => {
+  const handleChange = (e) => {
     const file = e.target.files[0];
-    if (!file) return;
-
-    // Preview local antes de enviar
-    setPreview(URL.createObjectURL(file));
-
-    const formData = new FormData();
-    formData.append("link", file);
-
-    try {
-      setUploading(true);
-      const token = localStorage.getItem("token");
-
-      const response = await fetch("https://nerdyzone.onrender.com/perfil/foto", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`, 
-        },
-        body: formData,
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        console.log("Upload feito com sucesso:", data);
-        // Se o backend retorna a URL, atualiza o preview definitivo:
-        if (data.perfil?.link) setPreview(data.perfil.link);
-      } else {
-        console.error("Erro no upload:", data.error);
-        alert("Erro no upload: " + (data.error || "desconhecido"));
-      }
-    } catch (err) {
-      console.error("Erro na requisição:", err);
-      alert("Erro ao conectar com o servidor");
-    } finally {
-      setUploading(false);
-    }
+    if (file) setImagem(file);
   };
+
+  useEffect(() => {
+    if (!imagem) return;
+
+    const uploadImagem = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const token = localStorage.getItem("token");
+        const formData = new FormData();
+        formData.append("imagem", imagem);
+
+        const response = await fetch("https://nerdyzone.onrender.com/perfil/foto", {
+          method: "PATCH", // ALTERAÇÃO: PATCH em vez de POST
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        });
+
+        if (!response.ok) {
+          const data = await response.json();
+          throw new Error(data.error || "Erro ao enviar imagem");
+        }
+
+        console.log("Foto atualizada com sucesso!");
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    uploadImagem();
+  }, [imagem]);
 
   return (
     <div>
-      <input type="file" accept="image/*" onChange={handleFileChange} />
-      {uploading && <p>Enviando imagem...</p>}
+        <label htmlFor="upload"><img src={mais} alt="" /></label>
+      <input id="upload" type="file" accept="image/*" onChange={handleChange} />
     </div>
   );
 }
