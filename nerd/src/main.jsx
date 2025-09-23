@@ -10,6 +10,7 @@ import Venda from "./pages/venda";
 import Navbar from "./components/ui/navbar";
 import { Toaster } from "./components/ui/sonner";
 import Footer from "./components/ui/footer"
+import Criareventos from "./pages/Criareventos";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Router>
       <Navbar page="home" />
       <Routes>
+        <Route path="/criareventos" element={<Criareventos />} />
         <Route path="/" element={<Home />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/EventosPage" element={<Eventos />} />
