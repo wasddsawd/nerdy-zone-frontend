@@ -26,7 +26,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         {/* 👉 agrupa login/cadastro aqui dentro */}
         <Route path="/*" element={<AnimatedRoutes />} />
       </Routes>
-      <Footer />
     </Router>
   </React.StrictMode>
 );
