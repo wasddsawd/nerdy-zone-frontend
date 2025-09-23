@@ -34,11 +34,13 @@
 
 /* Sidebar */
 .events_sidebar {
+  height: 800px;
   width: 250px;
   background-color: #00172d;
   border-right: 1px solid #fff;
   padding: 1rem;
   overflow-y: auto;
+  flex-direction: column;
 }
 
 .events_sidebar h1 {
@@ -86,6 +88,18 @@
   font-weight: bold;
 }
 
+.btncriar {
+  background-color: #004aad;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 1rem;
+  position: relative;
+  bottom: 0px;
+}
+
 @media screen and (max-width: 501px) {
   .events_layout {
   flex-direction: column;
@@ -97,9 +111,5 @@
   border-bottom: 1px solid #fff;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-.filters {
-
 }
 }

@@ -56,9 +56,9 @@ export default function Perfil() {
             <div className={styles.profilepicturecontainer}>
               <div className={styles.profilepicture}>
                 {foto ? (
-                  <img src={foto} alt="Foto de perfil" style={{ width: 100, height: 100, borderRadius: '50%' }}/>
+                  <img className={styles.fotin} src={foto} alt="Foto de perfil" style={{ width: 100, height: 100, borderRadius: '50%' }}/>
                 ) : (
-                  <div className={styles.placeholder}>Sem foto</div>
+                  <div className={styles.viado}>Sem foto</div>
                 )}
                 <Upload />
               </div>
