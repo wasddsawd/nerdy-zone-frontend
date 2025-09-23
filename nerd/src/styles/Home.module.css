@@ -1,90 +1,78 @@
-/* ========================
-   RESET BÁSICO
-======================== */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* ========================
-   VARIÁVEIS
-======================== */
-:root {
-  --color-primary: #0b6fff;
-  --color-dark: #0b1220;
-  --color-text: #e6eef8;
-  --color-light: #ffffff;
-  --color-accent: #00b7ff;
-  --color-secondary: #00a0d9;
-}
-
-/* ========================
-   GLOBAL
-======================== */
 .all {
-  font-family: 'Montserrat', sans-serif;
+  font-family: Montserrat, sans-serif;
   background-image: linear-gradient(135deg, var(--color-primary), var(--color-dark));
   color: var(--color-text);
   line-height: 1.6;
   min-height: 100vh;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 0;
+  height: 100vh;
 }
-
-/* ========================
-   CONTAINER
-======================== */
-.container {
-  max-width: 1200px;
+.body {
   width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
 }
-
-/* ========================
-   LOGO
-======================== */
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 4px;
-  filter: drop-shadow(0 0 20px rgb(0, 183, 255));
-}
-.logo img {
-  height: 100%;
-}
-
-/* ========================
-   BANNER
-======================== */
+/* Header */
 .banner {
   background: var(--color-dark);
-  padding: 80px 20px;
+  padding: 15px 30px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
+  width: 50%;
   border-radius: 10px;
-  margin-bottom: 40px;
+  text-align: center;
+  padding: 80px 20px;
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  filter: drop-shadow(0px 0px 20px rgb(0, 183, 255));
+}
+
+.logo img {
+  height: 250px;
+}
+
+.logo span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.words {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.words:hover {
+  color: var(--color-accent);
+}
+
+/* Banner */
+
 .banner h1 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-  line-height: 1.2;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
+
 .banner p {
-  font-size: 1.1rem;
-  color: #ccc;
+  font-size: 1.2rem;
   margin-bottom: 25px;
 }
+
 .banner button {
   background: var(--color-accent);
   border: none;
@@ -93,93 +81,43 @@
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
+
 .banner button:hover {
   background: var(--color-secondary);
 }
 
-/* ========================
-   CARDS
-======================== */
+/* Cards */
 .cards_container {
   display: flex;
-  flex-wrap: wrap; /* quebra linha quando precisar */
-  justify-content: flex-end; /* joga tudo pro lado direito */
-  align-items: first baseline; /* alinha pelo topo */
-  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
   padding: 50px 20px;
+  gap: 20px;
 }
 
-/* card base */
 .card {
   background: var(--color-dark);
-  color: var(--color-light);
-  width: 280px;
-  padding: 25px 20px;
   border-radius: 12px;
-  text-align: left;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 1;
-}
-
-/* card grandão */
-.card.grande {
-  flex: 1 1 600px; /* cresce e ocupa mais espaço */
-  max-width: 600px;
-  padding: 35px 30px;
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-}
-
-/* hover */
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* ========================
-   ANIMAÇÕES
-======================== */
-@keyframes fadeInRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ========================
-   FOOTER
-======================== */
-.footer {
-  width: 100%;
+  padding: 20px;
+  width: 300px;
   text-align: center;
+  color: var(--color-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  bottom: 0;
+  width: 100%;
   padding: 20px;
   background: var(--color-dark);
   color: var(--color-light);
-}
-
-/* ========================
-   RESPONSIVIDADE
-======================== */
-@media (max-width: 600px) {
-  .logo img {
-    height: 140px;
-  }
-  .banner {
-    padding: 40px 12px;
-  }
-  .cards_container {
-    justify-content: center; /* em telas pequenas, centraliza */
-  }
-  .card.grande {
-    max-width: 100%;
-  }
 }
