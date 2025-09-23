@@ -44,6 +44,7 @@ export default function EventsPage() {
             <h1>Comentários</h1>
             <div className={styles.comments_placeholder}>[Comentários]</div>
           </section>
+          */}
           <button className={styles.btncriar}>Criar Eventos</button>
         </aside>
 
