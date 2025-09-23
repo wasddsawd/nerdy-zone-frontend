@@ -186,19 +186,19 @@ export default function Criareventos() {
                     </div>
 
                     <div className={styles.formactions}>
-                        <Button
+                        <button
                             type="button"
                             onClick={handleCancel}
                             className={styles.btncancel}
                         >
                             Cancelar
-                        </Button>
-                        <Button
+                        </button>
+                        <button
                             type="submit"
                             className={styles.btnsubmit}
                         >
                             Salvar
-                        </Button>
+                        </button>
                     </div>
                 </form>
             </main>
