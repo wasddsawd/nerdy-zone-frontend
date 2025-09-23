@@ -9,7 +9,6 @@ import "./styles/Geral.css";
 import Venda from "./pages/venda";
 import Navbar from "./components/ui/navbar";
 import { Toaster } from "./components/ui/sonner";
-import Footer from "./components/ui/footer"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -24,7 +23,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         {/* 👉 agrupa login/cadastro aqui dentro */}
         <Route path="/*" element={<AnimatedRoutes />} />
       </Routes>
-      <Footer />
     </Router>
   </React.StrictMode>
 );
