@@ -19,7 +19,8 @@ export default function Perfil() {
         },
       });
 
-      if (response.status === 401) throw new Error("Não autorizado. Faça login.");
+      if (response.status === 401)
+        throw new Error("Não autorizado. Faça login.");
       if (!response.ok) throw new Error("Erro ao buscar usuário");
 
       const data = await response.json();
@@ -28,7 +29,10 @@ export default function Perfil() {
       // Busca a foto do perfil
       const fotoRes = await fetch("https://nerdyzone.onrender.com/foto", {
         method: "GET",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
       });
 
       if (fotoRes.ok) {
@@ -52,7 +56,7 @@ export default function Perfil() {
             <div className={styles.profilepicturecontainer}>
               <div className={styles.profilepicture}>
                 {foto ? (
-                  <img src={foto} alt="Foto de perfil" />
+                  <img src={foto} alt="Foto de perfil" style={{ width: 100, height: 100, borderRadius: '50%' }}/>
                 ) : (
                   <div className={styles.placeholder}>Sem foto</div>
                 )}
@@ -102,7 +106,9 @@ export default function Perfil() {
             {[...Array(4)].map((_, idx) => (
               <div className={styles.eventcard} key={idx}>
                 <div className={styles.eventimageplaceholder}>
-                  <span className={styles.placeholdertext}>Fotos do evento</span>
+                  <span className={styles.placeholdertext}>
+                    Fotos do evento
+                  </span>
                 </div>
                 <p className={styles.eventdescription}>sobre o evento</p>
               </div>
