@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import '../styles/Geral.css'
 import nerdy from '../assets/nerdy.png'
 import Navbar from '../components/ui/navbar'
+import Line from './line'
 
 export default function App() {
   return (
@@ -19,7 +20,7 @@ export default function App() {
         <section className={styles.banner}>
           <h1>Bem-vindo à NerdyZone</h1>
           <p>Seu portal geek e tecnológico!</p>
-          <button>Saiba Mais</button>
+          <Line />
         </section>
 
         {/* Cards de destaque */}

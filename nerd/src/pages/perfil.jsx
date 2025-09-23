@@ -4,8 +4,10 @@ import Upload from "../components/ui/upload";
 
 export default function Perfil() {
   const [usuario, setUsuario] = useState(null);
+  const [foto, setFoto] = useState(null);
+  const [error, setError] = useState(null);
 
-  // Função para buscar dados do usuário
+  // Busca dados do usuário
   const fetchUsuario = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -17,22 +19,30 @@ export default function Perfil() {
         },
       });
 
-      if (response.status === 401)
-        throw new Error("Não autorizado. Faça login.");
+      if (response.status === 401) throw new Error("Não autorizado. Faça login.");
       if (!response.ok) throw new Error("Erro ao buscar usuário");
 
       const data = await response.json();
       setUsuario(data.perfil);
+
+      // Busca a foto do perfil
+      const fotoRes = await fetch("https://nerdyzone.onrender.com/foto", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      if (fotoRes.ok) {
+        const fotoData = await fotoRes.json();
+        setFoto(fotoData.link); // assume { link: "url_da_imagem" }
+      }
     } catch (err) {
       setError(err.message);
     }
   };
+
   useEffect(() => {
-    const carregarUsuario = async () => {
-      await fetchUsuario();
-    };
-    carregarUsuario();
+    fetchUsuario();
   }, []);
+
   return (
     <div className={styles.profilepagecontainer}>
       <main className={styles.profilecontent}>
@@ -40,10 +50,15 @@ export default function Perfil() {
           <div className={styles.profileheader}>
             <div className={styles.profilepicturecontainer}>
               <div className={styles.profilepicture}>
-                <img src={usuario ? usuario.link : "Carregando..."} alt="" />
+                {foto ? (
+                  <img src={foto} alt="Foto de perfil" />
+                ) : (
+                  <div className={styles.placeholder}>Sem foto</div>
+                )}
                 <Upload />
               </div>
             </div>
+
             <div className={styles.profiledetails}>
               <p className={styles.profilename}>
                 Nome: {usuario ? usuario.username : "Carregando..."}
@@ -86,15 +101,15 @@ export default function Perfil() {
             {[...Array(4)].map((_, idx) => (
               <div className={styles.eventcard} key={idx}>
                 <div className={styles.eventimageplaceholder}>
-                  <span className={styles.placeholdertext}>
-                    Fotos do evento
-                  </span>
+                  <span className={styles.placeholdertext}>Fotos do evento</span>
                 </div>
                 <p className={styles.eventdescription}>sobre o evento</p>
               </div>
             ))}
           </div>
         </aside>
+
+        {error && <p style={{ color: "red" }}>{error}</p>}
       </main>
     </div>
   );

@@ -1,40 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import mais from "../../assets/mais.svg"
+import styles from "../../styles/perfil.module.css"
 
-export default function UploadFoto() {
-  const [file, setFile] = useState(null);
+export default function UploadFotoPerfil() {
+  const [imagem, setImagem] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleFile = (e) => setFile(e.target.files[0]);
-
-  const handleUpload = async () => {
-    if (!file) return alert("Escolha um arquivo");
-
-    const formData = new FormData();
-    formData.append("imagem", file);
-
-    try {
-      const token = localStorage.getItem("token");
-      const res = await fetch("https://nerdyzone.onrender.com/perfil/foto", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`, 
-        },
-        body: formData,
-      });
-
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Erro no upload");
-
-      console.log("Sucesso:", data);
-    } catch (err) {
-      console.error(err);
-      alert(err.message || "Falha no upload");
-    }
+  const handleChange = (e) => {
+    const file = e.target.files[0];
+    if (file) setImagem(file);
   };
+
+  useEffect(() => {
+    if (!imagem) return;
+
+    const uploadImagem = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const token = localStorage.getItem("token");
+        const formData = new FormData();
+        formData.append("imagem", imagem);
+
+        const response = await fetch("https://nerdyzone.onrender.com/foto", {
+          method: "PATCH", // ALTERAÇÃO: PATCH em vez de POST
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        });
+
+        if (!response.ok) {
+          const data = await response.json();
+          throw new Error(data.error || "Erro ao enviar imagem");
+        }
+
+        console.log("Foto atualizada com sucesso!");
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    uploadImagem();
+  }, [imagem]);
 
   return (
     <div>
-      <input type="file" accept="image/*" onChange={handleFile} />
-      <button onClick={handleUpload}>Enviar</button>
+        <label htmlFor="upload"><img src={mais} alt="image" className={styles.mais}/></label>
+      <input id="upload" type="file" accept="image/*" onChange={handleChange} />
     </div>
   );
 }
