@@ -10,6 +10,7 @@ import Venda from "./pages/venda";
 import Navbar from "./components/ui/navbar";
 import { Toaster } from "./components/ui/sonner";
 import Footer from "./components/ui/footer"
+import Criareventos from "./pages/Criareventos";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
