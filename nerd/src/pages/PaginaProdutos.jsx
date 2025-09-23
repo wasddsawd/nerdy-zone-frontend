@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function AddProduct() {
+export default function paginaProdutos() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
