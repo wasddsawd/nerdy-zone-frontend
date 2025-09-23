@@ -35,10 +35,12 @@
 /* Sidebar */
 .events_sidebar {
   width: 250px;
+  display: flex;
   background-color: #111;
   border-right: 1px solid #fff;
   padding: 1rem;
   overflow-y: auto;
+  flex-direction: column;
 }
 
 .events_sidebar h2 {
@@ -84,4 +86,14 @@
   cursor: pointer;
   color: #000;
   font-weight: bold;
+}
+
+.btncriar {
+  background-color: #004aad;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 1rem;
 }
