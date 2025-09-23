@@ -39,11 +39,6 @@ export default function App() {
         </section>
       </div>
       {/* Rodapé */}
-      <footer>
-        <p className={styles.footer}>
-          © 2025 NerdyZone. Todos os direitos reservados.
-        </p>
-      </footer>
     </>
   );
 }
