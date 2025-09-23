@@ -52,7 +52,7 @@ export default function Perfil() {
             <div className={styles.profilepicturecontainer}>
               <div className={styles.profilepicture}>
                 {foto ? (
-                  <img src={`https://res.cloudinary.com/dkdifpjty/image/upload/w_200,h_200,c_thumb,r_max/${foto}`} alt="Foto de perfil" />
+                  <img src={foto} alt="Foto de perfil" />
                 ) : (
                   <div className={styles.placeholder}>Sem foto</div>
                 )}
