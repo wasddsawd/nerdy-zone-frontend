@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: max-content;
-  background-color: #000; /* fundo preto */
+  background-color: #00172d; /* fundo preto */
   color: #fff; /* texto branco */
   font-family: sans-serif;
 }
@@ -44,7 +44,7 @@
 }
 
 .events_sidebar h2 {
-  color: #fcc800;
+  color: #6dd1ff;
   margin-bottom: 0.5rem;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .event_card button {
-  background-color: #fcc800;
+  background-color: #77ffcb;
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
