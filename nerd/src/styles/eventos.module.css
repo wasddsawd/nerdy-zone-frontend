@@ -96,6 +96,7 @@
   font-weight: bold;
   margin-top: 1rem;
 }
+
 @media screen and (max-width: 501px) {
   .events_layout {
   flex-direction: column;
@@ -107,9 +108,5 @@
   border-bottom: 1px solid #fff;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-.filters {
-
 }
 }
