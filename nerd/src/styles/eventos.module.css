@@ -41,7 +41,7 @@
   overflow-y: auto;
 }
 
-.events_sidebar h2 {
+.events_sidebar h1 {
   color: #6dd1ff;
   margin-bottom: 0.5rem;
 }
@@ -100,6 +100,6 @@
 }
 
 .filters {
-  
+
 }
 }
