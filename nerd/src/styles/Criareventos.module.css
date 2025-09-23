@@ -136,7 +136,17 @@
 
 }
 
-.btncancel,
+.btncancel{
+    padding: 0.75rem 2rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  min-width: 120px;
+}
+
 .btnsubmit {
   padding: 0.75rem 2rem;
   border-radius: 4px;
@@ -160,7 +170,7 @@
 }
 
 .btnsubmit {
-  background-color: var(--color-primary);
+  background-color: transparent;
   color: var(--color-text);
   border-color: var(--color-primary);
 }
