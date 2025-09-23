@@ -50,8 +50,8 @@ export default function UploadFotoPerfil() {
 
   return (
     <div>
-        <label htmlFor="upload"><img src={mais} alt="image" className={styles.mais}/></label>
-      <input id="upload" type="file" accept="image/*" onChange={handleChange} />
+        <label className={styles.viado} htmlFor="upload"><img src={mais} alt="image" className={styles.mais}/></label>
+      <input className={styles.upload} id="upload" type="file" accept="image/*" onChange={handleChange} />
     </div>
   );
 }

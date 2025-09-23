@@ -19,7 +19,6 @@ export default function EventsPage() {
             <label><input type="checkbox" /> HQs</label>
             <label><input type="checkbox" /> Cosplay</label>
             <label><input type="checkbox" /> Tecnologia</label>
-          
           </section>
           {/*
           <section className={styles.calendar}>
