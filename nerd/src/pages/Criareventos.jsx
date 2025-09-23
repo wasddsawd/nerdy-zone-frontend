@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Button } from '../components/ui/button.jsx'
 import styles from '../styles/Criareventos.module.css'
 
 export default function Criareventos() {
