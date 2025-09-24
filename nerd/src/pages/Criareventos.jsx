@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Button } from '../components/ui/button.jsx'
 import styles from '../styles/Criareventos.module.css'
 
 export default function Criareventos() {
@@ -145,8 +146,18 @@ export default function Criareventos() {
                                 <input
                                     type="radio"
                                     name="categoria"
-                                    value="Anime"
-                                    checked={formData.categoria === 'Anime'}
+                                    value="drink"
+                                    checked={formData.categoria === 'drink'}
+                                    onChange={handleInputChange}
+                                />
+                                <span>Drink</span>
+                            </label>
+                            <label className={styles.radiooption}>
+                                <input
+                                    type="radio"
+                                    name="categoria"
+                                    value="anime"
+                                    checked={formData.categoria === 'anime'}
                                     onChange={handleInputChange}
                                 />
                                 <span>Anime</span>
@@ -155,41 +166,21 @@ export default function Criareventos() {
                                 <input
                                     type="radio"
                                     name="categoria"
-                                    value="Games"
-                                    checked={formData.categoria === 'Games'}
+                                    value="jogos"
+                                    checked={formData.categoria === 'jogos'}
                                     onChange={handleInputChange}
                                 />
-                                <span>Games</span>
+                                <span>Jogos</span>
                             </label>
                             <label className={styles.radiooption}>
                                 <input
                                     type="radio"
                                     name="categoria"
-                                    value="HQs"
-                                    checked={formData.categoria === 'HQs'}
+                                    value="outros"
+                                    checked={formData.categoria === 'outros'}
                                     onChange={handleInputChange}
                                 />
-                                <span>HQs</span>
-                            </label>
-                            <label className={styles.radiooption}>
-                                <input
-                                    type="radio"
-                                    name="categoria"
-                                    value="Cosplay"
-                                    checked={formData.categoria === 'Cosplay'}
-                                    onChange={handleInputChange}
-                                />
-                                <span>Cosplay</span>
-                            </label>
-                               <label className={styles.radiooption}>
-                                <input
-                                    type="radio"
-                                    name="categoria"
-                                    value="Tecnologia"
-                                    checked={formData.categoria === 'Tecnologia'}
-                                    onChange={handleInputChange}
-                                />
-                                <span>Tecnologia</span>
+                                <span>Outros</span>
                             </label>
                         </div>
                     </div>

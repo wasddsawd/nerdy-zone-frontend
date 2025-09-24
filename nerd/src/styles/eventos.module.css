@@ -12,7 +12,7 @@
   height: 80vh; /* 40% da altura da tela */
   min-height: 200px; /* nunca menor que isso */
   max-height: 800px; /* nunca maior que isso */
-  background-image: url('../assets/MicrosoftTeams-image.png');
+  background-image: url("../assets/MicrosoftTeams-image.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -25,7 +25,6 @@
   text-align: center;
 }
 
-
 .events_layout {
   display: flex;
   flex: 1;
@@ -36,7 +35,8 @@
 .events_sidebar {
   height: 800px;
   width: 250px;
-  background-color: #00172d;
+  display: flex;
+  background-color: #111;
   border-right: 1px solid #fff;
   padding: 1rem;
   overflow-y: auto;
@@ -64,7 +64,6 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-
 }
 
 .countdown_timer {
@@ -98,18 +97,4 @@
   margin-top: 1rem;
   position: relative;
   bottom: 0px;
-}
-
-@media screen and (max-width: 501px) {
-  .events_layout {
-  flex-direction: column;
-}
-
-.events_sidebar {
-  width: 100%;
-  border-right: none;
-  border-bottom: 1px solid #fff;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 }

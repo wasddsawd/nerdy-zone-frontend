@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "../styles/venda.module.css";
-import { Link } from "react-router-dom";
 
 export default function Venda() {
   const products = Array.from({ length: 8 }, (_, i) => ({
@@ -18,12 +17,7 @@ export default function Venda() {
         <aside className={styles.sidebar}>
           <div className={styles.sidebarbuttons}>
             <button className={styles.sidebarbtn}>Produtos</button>
-            <Link
-              to="/PaginaProdutos"
-              className={styles.sidebarbtn}
-            >
-              Vender
-            </Link>
+            <button className={styles.sidebarbtn}>Vender</button>
           </div>
           <div className={styles.classificarsection}>
             <h3>Classificar Itens</h3>

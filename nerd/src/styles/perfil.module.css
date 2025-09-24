@@ -84,7 +84,6 @@
   opacity: 0.9;
 }
 
-
 .aboutsection {
   background-color: var(--color-primary);
   padding: 2rem;
@@ -286,5 +285,5 @@
 }
 
 .upload {
-  display: none;
+  color: transparent;
 }

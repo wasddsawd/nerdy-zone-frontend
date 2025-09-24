@@ -28,16 +28,12 @@ export default function Perfil() {
 
       // Busca a foto do perfil
       const fotoRes = await fetch("https://nerdyzone.onrender.com/foto", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
+        headers: { Authorization: `Bearer ${token}` },
       });
 
       if (fotoRes.ok) {
         const fotoData = await fotoRes.json();
-        setFoto(fotoData.url); // assume { link: "url_da_imagem" }
+        setFoto(fotoData.link); // assume { link: "url_da_imagem" }
       }
     } catch (err) {
       setError(err.message);
@@ -56,7 +52,11 @@ export default function Perfil() {
             <div className={styles.profilepicturecontainer}>
               <div className={styles.profilepicture}>
                 {foto ? (
-                  <img className={styles.fotin} src={foto} alt="Foto de perfil" style={{ width: 100, height: 100, borderRadius: '50%' }}/>
+                  <img
+                    className={styles.fotin}
+                    src={foto}
+                    alt="Foto de perfil"
+                  />
                 ) : (
                   <div className={styles.viado}>Sem foto</div>
                 )}
