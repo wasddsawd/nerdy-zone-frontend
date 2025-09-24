@@ -10,12 +10,10 @@ export default function Home() {
     <>
       {/* Cabeçalho */}
       <Navbar />
-
-        <div>
+      <main>
           <div className={styles.logo}>
             <img src={nerdy} />
           </div>
-        </div>
         {/* Banner */}
         <section className={styles.banner}>
           <h1>Bem-vindo à NerdyZone</h1>
@@ -40,7 +38,6 @@ export default function Home() {
               <p>Encontre produtos exclusivos e colecionáveis.</p>
             </article>
           </section>
-        </div>
       </main>
 
       {/* Rodapé */}
