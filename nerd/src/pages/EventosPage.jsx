@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "../styles/eventos.module.css";
+import { useNavigate } from "react-router-dom";
+
 
 export default function EventsPage() {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.events_page}>
       {/* Banner */}
@@ -36,25 +40,13 @@ export default function EventsPage() {
             <div className={styles.calendar_placeholder}>[Calendário]</div>
           </section>
 
-          <section className={styles.featured}>
-            <h1>Destaques</h1>
-            <ul>
-              <li>Evento 1</li>
-              <li>Evento 2</li>
-            </ul>
-          </section>
-
-          <section className={styles.gallery}>
-            <h1>Galeria</h1>
-            <div className={styles.gallery_placeholder}>[Imagens]</div>
-          </section>
-
-          <section className={styles.comments}>
-            <h1>Comentários</h1>
-            <div className={styles.comments_placeholder}>[Comentários]</div>
-          </section>
-          */}
-          <button className={styles.btncriar}>Criar Eventos</button>
+          {/* Botão Criar Eventos */}
+          <button 
+            className={styles.btncriar} 
+            onClick={() => navigate("/Criareventos")}
+          >
+            Criar Eventos
+          </button>
         </aside>
 
         <div className={styles.container}>
@@ -77,9 +69,7 @@ export default function EventsPage() {
               <h1>Detalhes</h1>
               <div className={styles.map_placeholder}>[Mapa]</div>
               <div className={styles.guests_placeholder}>[Convidados]</div>
-              <div className={styles.competitions_placeholder}>
-                [Competições]
-              </div>
+              <div className={styles.competitions_placeholder}>[Competições]</div>
             </section>
           </main>
         </div>
