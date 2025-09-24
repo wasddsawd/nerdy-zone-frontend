@@ -51,10 +51,11 @@ const Line = () => {
               transition={{ duration: 0.6, delay: 1.2 }}
               style={{ color: "#fff", padding: 20, textAlign: "center" }}
             >
-              <h2>Conteúdo do Quadrado</h2>
+              <h2>NerdyZone</h2>
               <p>
-                Aqui você pode colocar qualquer informação, links, imagens ou
-                botões. Tudo aparece suavemente depois que o quadrado é aberto.
+                Olá, nós somos o NerdyZone e nosso objetivo é ajudar pessoas
+                que querem participar de eventos relacionados com a comunidade geek/nerd 
+                a encontrarem meios eficientes de acharem seus eventos e novos hobbies.
               </p>
             </motion.div>
           </motion.div>
