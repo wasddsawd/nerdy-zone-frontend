@@ -46,7 +46,9 @@
 }
 
 .profilepicturecontainer {
-  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profilepicture {
@@ -277,6 +279,7 @@
 
 .fotin {
   border-radius: 20px;
+  flex-grow: var(--color-accent);
 }
 
 .viado {
