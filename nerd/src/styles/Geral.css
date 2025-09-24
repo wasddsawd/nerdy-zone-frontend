@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import "tailwindcss";
-@import "tw-animate-css";
 
 :root {
   --color-primary: #004aad;     /* Azul fundo principal */
@@ -85,7 +83,11 @@ footer {
   scrollbar-width: auto;
   scrollbar-color: #4696ff #00268f; /* thumb cor / track cor */
 }
-
+a {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
 
 
 

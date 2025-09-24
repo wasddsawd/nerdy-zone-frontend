@@ -1,9 +1,9 @@
-// Home.jsx
-import React from 'react'
-import styles from '../styles/Home.module.css'
-import '../styles/Geral.css'
-import nerdy from '../assets/nerdy.png'
-import Navbar from '../components/ui/navbar'
+import React from "react";
+import styles from "../styles/Home.module.css";
+import "../styles/Geral.css";
+import nerdy from "../assets/nerdy.png";
+import Navbar from "../components/ui/navbar";
+import Line from "./line";
 
 export default function Home() {
   return (
@@ -11,20 +11,17 @@ export default function Home() {
       {/* Cabeçalho */}
       <Navbar />
 
-      <div className={styles.logo}>
-        <img src={nerdy} alt="Logo NerdyZone" />
-      </div>
-
-      <main className={styles.all}>
-        <div className={styles.container}>
-          {/* Banner */}
-          <section className={styles.banner}>
-            <h1>Bem-vindo à NerdyZone</h1>
-            <p>Seu portal geek e tecnológico!</p>
-            <button onClick={() => window.scrollTo(0, document.body.scrollHeight)}>
-              Saiba Mais
-            </button>
-          </section>
+        <div>
+          <div className={styles.logo}>
+            <img src={nerdy} />
+          </div>
+        </div>
+        {/* Banner */}
+        <section className={styles.banner}>
+          <h1>Bem-vindo à NerdyZone</h1>
+          <p>Seu portal geek e tecnológico!</p>
+          <Line />
+        </section>
 
           {/* Cards */}
           <section className={styles.cards_container}>
@@ -47,9 +44,6 @@ export default function Home() {
       </main>
 
       {/* Rodapé */}
-      <footer className={styles.footer}>
-        <p>© 2025 NerdyZone. Todos os direitos reservados.</p>
-      </footer>
     </>
   )
 }

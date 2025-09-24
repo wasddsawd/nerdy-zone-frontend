@@ -21,17 +21,22 @@
    GLOBAL STYLES
    =======================*/
 .all {
-  font-family: 'Montserrat', sans-serif;
-  background-image: linear-gradient(135deg, var(--color-primary), var(--color-dark));
+  font-family: "Montserrat", sans-serif;
+  background-image: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-dark)
+  );
   color: var(--color-text);
   line-height: 1.6;
-  min-height: 100vh;
+  min-height: 100vh; /* mantém altura mínima da tela */
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 0;
+  align-items: center; /* center horizontalmente */
+  justify-content: flex-start; /* NÃO center verticalmente */
+  padding-top: var(--navbar-height); /* reserva espaço se o navbar for fixed */
+  box-sizing: border-box;
 }
 
 /* ========================
@@ -63,13 +68,40 @@
    =======================*/
 .banner {
   background: var(--color-dark);
-  padding: 80px 20px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start; /* garante que filhos comecem do topo do banner */
   align-items: center;
-  text-align: center;
+  width: 50%;
+  max-width: 1100px; /* protege layouts grandes */
   border-radius: 10px;
-  margin-bottom: 40px;
+  text-align: center;
+  padding: 40px 30px; /* padding reduzido e consistente */
+  transform-origin: top center; /* importante para animação vertical */
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  filter: drop-shadow(0px 0px 20px rgb(0, 183, 255));
+}
+
+.logo img {
+  height: 250px;
+}
+
+.logo span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 .banner h1 {
   font-size: 2.2rem;
@@ -196,27 +228,21 @@
    FOOTER
    =======================*/
 .footer {
-  width: 100%;
+  position: relative;
   text-align: center;
   padding: 20px;
   background: var(--color-dark);
   color: var(--color-light);
 }
 
-/* ========================
-   Responsividade rápida (ajustes)
-   =======================*/
-@media (max-width: 600px) {
-  .logo img {
-    height: 140px;
-  }
+@media screen and (max-width: 577px) {
   .banner {
-    padding: 40px 12px;
+    width: 100%;
+    border-radius: none;
   }
-  .cards_container.right {
-    align-items: center;
-  } /* em telas pequenas, centraliza os cards para evitar overflow */
-  .cards_container.grid {
-    grid-template-columns: 1fr;
+
+  .all {
+    background-color: var(--color-dark);
+    background-image: none;
   }
 }
